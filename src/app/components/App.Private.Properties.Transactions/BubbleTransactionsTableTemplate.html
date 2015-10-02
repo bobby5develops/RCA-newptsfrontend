@@ -1,0 +1,24 @@
+<table style="display: block; overflow-y: auto; height: 500px;"
+  class="table table-striped">
+  <thead>
+  <tr>
+    <th>{{transactionsCtrl.searchType | translate}}</th>
+    <th>{{'NUMBER_OF_TRANSACTIONS' | translate}}</th>
+    <th>{{'SUM_OF_STATUSPRICE' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="result in transactionsCtrl.bubbleSearchResults">
+    <td>
+      {{result.Name}}
+    </td>
+    <td>
+      {{result.NumberOfTransactions | number}}
+    </td>
+    <td>
+      {{result.SumOfStatusPrice | currency:result.CurrencySymbol:0}}
+    </td>
+  </tr>
+
+  </tbody>
+</table>

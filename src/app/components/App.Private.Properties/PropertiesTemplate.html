@@ -1,0 +1,13 @@
+<div class="panel panel-default" ng-click="propertiesCtrl.hideDebugger()" ng-if="propertiesCtrl.showDebugger" style="z-index: 10; position: absolute; top: 60px; right: 15px;">
+    <div class="panel-heading">Sanity Debugger</div>
+
+    <ul class="list-group">
+        <li class="list-group-item">NorthEast Bound: {{propertiesCtrl.transactionFiltersService.mapBounds.northeast.latitude}}, {{propertiesCtrl.transactionFiltersService.mapBounds.northeast.longitude}}</li>
+        <li class="list-group-item">SouthWest Bound: {{propertiesCtrl.transactionFiltersService.mapBounds.southwest.latitude}}, {{propertiesCtrl.transactionFiltersService.mapBounds.southwest.longitude}}</li>
+        <li class="list-group-item">Center: {{propertiesCtrl.transactionFiltersService.MapCenter.latitude}}, {{propertiesCtrl.transactionFiltersService.MapCenter.longitude}}</li>
+    </ul>
+</div>
+
+<div ui-view="transactions" ng-show="$state.includes('app.private.properties.transactions')"></div>
+<div ui-view="players" ng-show="$state.includes('app.private.properties.players')"></div>
+<div ui-view="trendstrades" ng-show="$state.includes('app.private.properties.trendstrades')"></div>

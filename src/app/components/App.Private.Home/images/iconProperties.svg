@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 244 246" style="enable-background:new 0 0 244 246;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#DD5F13;stroke-miterlimit:10;}
+	.st1{fill:#DD5F13;}
+	.st2{fill:#F3F5F4;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#05417C;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="122" cy="123.1" r="119.6"/>
+		<g>
+			<rect x="65" y="161" class="st1" width="111.3" height="6.5"/>
+			<g>
+				<rect x="72.7" y="89.2" class="st1" width="57.5" height="71.8"/>
+				<rect x="81" y="146.3" class="st2" width="40.7" height="8"/>
+				<rect x="81" y="134.5" class="st2" width="40.7" height="8"/>
+				<rect x="81" y="122.6" class="st2" width="40.7" height="8"/>
+				<rect x="81" y="110.8" class="st2" width="40.7" height="8"/>
+				<rect x="81" y="98.9" class="st2" width="40.7" height="8"/>
+			</g>
+			<g>
+				<rect x="113.4" y="89.2" class="st1" width="57.5" height="71.8"/>
+				<rect x="121.7" y="146.3" class="st2" width="40.7" height="8"/>
+				<rect x="121.7" y="134.5" class="st2" width="40.7" height="8"/>
+				<rect x="121.7" y="122.6" class="st2" width="40.7" height="8"/>
+				<rect x="121.7" y="110.8" class="st2" width="40.7" height="8"/>
+				<rect x="121.7" y="98.9" class="st2" width="40.7" height="8"/>
+			</g>
+			<g>
+				<rect x="91.9" y="72.2" class="st1" width="58.7" height="88.8"/>
+				<rect x="111.6" y="151.6" class="st3" width="19.1" height="9.4"/>
+				<rect x="100.4" y="140.5" class="st2" width="41.6" height="8"/>
+				<rect x="100.4" y="128.6" class="st2" width="41.6" height="8"/>
+				<rect x="100.4" y="116.8" class="st2" width="41.6" height="8"/>
+				<rect x="100.4" y="104.9" class="st2" width="41.6" height="8"/>
+				<rect x="100.4" y="93" class="st2" width="41.6" height="8"/>
+				<rect x="100.4" y="81.2" class="st2" width="41.6" height="8"/>
+			</g>
+		</g>
+	</g>
+	<rect x="2.4" y="280.6" style="fill:none;" width="247.4" height="38.2"/>
+	<text transform="matrix(1 0 0 1 56.7875 302.2462)" class="st4" style="font-family:'UniversLTStd-Light'; font-size:30px;">Properties</text>
+</g>
+</svg>

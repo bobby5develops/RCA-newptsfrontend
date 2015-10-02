@@ -1,0 +1,29 @@
+<div class="content_margin">
+    <h1 class="centerColumn-title">Commercial Real Estate Glossary</h1>
+
+    <table border="0" width="100%" cellpadding="2" cellspacing="2">
+        <tbody>
+        <tr ng-repeat="(glossaryIndexItem, glossaryItems) in glossaryCtrl.glossaryIndex">
+
+            <td  width="6%">
+                "<a href="/glossary/{{glossaryIndexItem}}/all.aspx" style="font-size: small">{{glossaryIndexItem}} </a>"
+            </td>
+            <td width="94%">
+        <span ng-repeat="glossaryItem in glossaryItems">
+            <a ui-sref="app.public.glossaryItem({glossaryItem: glossaryItem.keyword_tx})"
+               style="font-size: small">{{glossaryItem.keyword_tx}}</a><span ng-if="!$last" >,&nbsp;</span></span>
+        </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+    <p style="font-size: 10px; color: #777777;">
+        This site and the reports herein represent the most comprehensive data set of investment activity compiled for the commercial real estate industry. While no information in this highly fragmented market is perfect or all encompassing, Real Capital Analytics (RCA) has established rigid data collection and classification methodology including sourcing requirements and procedures to ensure information is accurate and timely.</p>
+    <p style="font-size: 10px; color: #777777;">
+        RCA has attempted to conform wherever possible to the proposed standards and definitions of the Data Consortium (sponsored by NCREIF, PREA, NAREIM) and the Appraisal Institute. Any known deviations from these standards are noted.</p>
+
+</div>
+

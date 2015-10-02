@@ -1,0 +1,45 @@
+.property-detail {
+
+  .divider {
+    border-top-color: lightgray;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin: 9px 0;
+  }
+
+  h4 {
+    color: #000066;
+  }
+
+  // Used to reduce the si
+  .text-x-small {
+    font-size: x-small;
+    min-height: 28px;
+    padding-bottom: 0;
+  }
+
+  .row-half-padding {
+    [class*="col-"] {
+      padding-left: 7px !important;
+      padding-right: 7px !important;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .angular-google-map {
+    height: 400px !important;
+  }
+
+  .angular-google-map-container {
+    height: 400px !important;
+  }
+
+  .street-view {
+    width: 100% !important;
+    height: 400px !important;
+  }
+
+}

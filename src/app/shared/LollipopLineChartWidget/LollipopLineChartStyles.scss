@@ -1,0 +1,89 @@
+.lolli-line-chart {
+
+  svg {
+    font: 14px 'Open Sans';
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    fill: #000;
+  }
+
+  .axis .tick line {
+    stroke: rgba(0, 0, 0, 0.1);
+  }
+
+  .legend .outer {
+    fill: rgba(230, 230, 255, 0.8);
+    stroke: rgba(216, 216, 255, 0.8);
+  }
+
+  .legend .inner {
+    fill: rgba(127, 127, 255, 0.8);
+    stroke: rgba(96, 96, 255, 0.8);
+  }
+
+  .line-series,
+  .legend .line-series {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3;
+  }
+
+  .legend .legend-bg {
+    fill: rgba(0, 0, 0, 0.5);
+    stroke: rgba(0, 0, 0, 0.5);
+  }
+
+  .lollipop.sale .lollipop-bg,
+  .lollipop.sale path {
+    fill: rgba(255, 127, 0, 0.8);
+    stroke: rgba(255, 127, 0, 0.8);
+    stroke-width: 3;
+  }
+
+  .lollipop.refinance .lollipop-bg,
+  .lollipop.refinance path {
+    fill: rgba(0, 5, 153, 0.8);
+    stroke: rgba(0, 5, 153, 0.8);
+    stroke-width: 3;
+  }
+
+  .lollipop.renovate .lollipop-bg,
+  .lollipop.renovate path {
+    fill: rgba(0, 153, 96, 0.8);
+    stroke: rgba(0, 153, 96, 0.8);
+    stroke-width: 3;
+  }
+
+  .lollipop.transfer .lollipop-bg,
+  .lollipop.transfer path {
+    fill: rgba(182, 42, 53, 0.8);
+    stroke: rgba(182, 42, 53, 0.8);
+    stroke-width: 3;
+  }
+
+  .lollipop path {
+    fill: none;
+  }
+
+  .legend text {
+    font-weight: bold;
+  }
+
+  .lollipop text {
+    fill: #fff;
+    font-weight: bold;
+  }
+
+  .lollipop text {
+    text-anchor: middle;
+  }
+
+}

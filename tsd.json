@@ -1,0 +1,69 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": ".tmp/typings",
+  "bundle": ".tmp/typings/tsd.d.ts",
+  "installed": {
+    "googlemaps/google.maps.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
+    },
+    "angularjs/angular-cookies.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angularjs/angular-sanitize.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angular-ui-bootstrap/angular-ui-bootstrap.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "d3/d3.d.ts": {
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
+    },
+    "angular-translate/angular-translate.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "sprintf-js/sprintf-js.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "moment/moment.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "numeraljs/numeraljs.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "bootstrap-slider/bootstrap-slider.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "geojson/geojson.d.ts": {
+      "commit": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
+    }
+  }
+}

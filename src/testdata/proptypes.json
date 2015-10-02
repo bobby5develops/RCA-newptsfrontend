@@ -1,0 +1,206 @@
+{
+  "propertyType": [
+    {
+      "id": 1,
+      "name": "Apartment",
+      "subtype": [
+        {
+          "id": 1,
+          "name": "Garden",
+          "feature": []
+        },
+        {
+          "id": 1,
+          "name": "Mid/HighRise",
+          "feature": []
+        },
+        {
+          "id": 1,
+          "name": "Age-Restricted",
+          "feature": []
+        },
+        {
+          "id": 1,
+          "name": "Student Housing",
+          "feature": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Hotel",
+      "subtype": [
+        {
+          "id": 3,
+          "name": "Full-Service",
+          "feature": []
+        },
+        {
+          "id": 4,
+          "name": "Limited service",
+          "feature": []
+        },
+        {
+          "id": 5,
+          "name": "Boutique",
+          "feature": []
+        },
+        {
+          "id": 6,
+          "name": "Casino",
+          "feature": []
+        },
+        {
+          "id": 11,
+          "name": "Extended stay",
+          "feature": []
+        },
+        {
+          "id": 48,
+          "name": "Resort",
+          "feature": []
+        },
+        {
+          "id": 59,
+          "name": "Suite",
+          "feature": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Industrial",
+      "subtype": [
+        {
+          "id": 12,
+          "name": "Flex",
+          "feature": [
+            {
+              "id": 44,
+              "name": "R&D"
+            },
+            {
+              "id": 60,
+              "name": "Tech/Telecom"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "General Industrial",
+          "feature": [
+            {
+              "id": 29,
+              "name": "Manufacturing"
+            },
+            {
+              "id": 67,
+              "name": "Warehouse/Distribution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Office",
+      "subtype": [
+        {
+          "id": 7,
+          "name": "CBD",
+          "feature": []
+        },
+        {
+          "id": 8,
+          "name": "Suburban",
+          "feature": []
+        },
+        {
+          "id": 30,
+          "name": "Medical",
+          "feature": []
+        },
+        {
+          "id": 44,
+          "name": "R&D",
+          "feature": []
+        },
+        {
+          "id": 60,
+          "name": "Tech/Telecom",
+          "feature": []
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Retail",
+      "subtype": [
+        {
+          "id": 1,
+          "name": "Mall & Others",
+          "feature": [
+            {
+              "id": 1,
+              "name": "Free Standing & Others"
+            },
+            {
+              "id": 1,
+              "name": "Regional Malls/Shopping Centers"
+            },
+            {
+              "id": 1,
+              "name": "Urban Retail/High Street"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Strip Center/Retail Park",
+          "feature": [
+            {
+              "id": 1,
+              "name": "Any Anchored"
+            },
+            {
+              "id": 1,
+              "name": "Grocery/Supermarket"
+            },
+            {
+              "id": 1,
+              "name": "Outlet Center"
+            },
+            {
+              "id": 1,
+              "name": "Power Center/Retail Park"
+            },
+            {
+              "id": 1,
+              "name": "Unanchored"
+            },
+            {
+              "id": 1,
+              "name": "Big Box"
+            },
+            {
+              "id": 1,
+              "name": "Drug Store"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Dev Site"
+    },
+    {
+      "id": 10,
+      "name": "Other"
+    },
+    {
+      "id": 11,
+      "name": "Seniors Housing & Care"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<table class="playerTable" style="width: 100%;">
+    <thead class="playerHead">
+    <tr>
+        <th style="width: 5%;color: white;">Rank</th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('companyName')">Seller
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'companyName'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;">
+            <a ng-click="sellerCtrl.orderBy('city')">City
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'city'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+            </a>
+            <a ng-click="sellerCtrl.orderBy('stateProv')">State
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'stateProv'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+            </a>
+            <a ng-click="sellerCtrl.orderBy('country')">Country
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'country'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+            </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('capitalGroup')">Capital Group
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'capitalGroup'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('office.numberOfProperties')">Office
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'office.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('industrial.numberOfProperties')">Industrial
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'industrial.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('retail.numberOfProperties')">Retail
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'retail.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('multiFamily.numberOfProperties')">Multi Family
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'multiFamily.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('hotel.numberOfProperties')">Hotel
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'hotel.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('other.numberOfProperties')">Other
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'other.numberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"><a ng-click="sellerCtrl.orderBy('totalNumberOfProperties')">Total
+            <span class="sortorder" ng-show="sellerCtrl.sortField === 'totalNumberOfProperties'"
+                  ng-class="{reverse:sellerCtrl.reverseSortFlag}"></span>
+        </a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="seller in sellerCtrl.sellers | orderBy:sellerCtrl.sortField:sellerCtrl.reverseSortFlag"
+        ng-class-even="'even'">
+        <td align="center">{{$index + 1}}</td>
+        <td>{{::seller.companyName}}</td>
+        <td>{{::seller.cityStateCountryString}}</td>
+        <td align="center">{{::seller.capitalGroup}}</td>
+        <td align="center">{{::seller.office.numberOfProperties == 0 ? '' : seller.office.numberOfProperties}}</td>
+        <td align="center">{{::seller.industrial.numberOfProperties == 0 ? '' : seller.industrial.numberOfProperties}}</td>
+        <td align="center">{{::seller.retail.numberOfProperties == 0 ? '' : seller.retail.numberOfProperties}}</td>
+        <td align="center">{{::seller.multiFamily.numberOfProperties == 0 ? '' : seller.multiFamily.numberOfProperties}}</td>
+        <td align="center">{{::seller.hotel.numberOfProperties == 0 ? '' : seller.hotel.numberOfProperties}}</td>
+        <td align="center">{{::seller.other.numberOfProperties == 0 ? '' : seller.other.numberOfProperties}}</td>
+        <td align="center">{{::seller.totalNumberOfProperties == 0 ? '' : seller.totalNumberOfProperties}}</td>
+    </tr>
+    </tbody>
+</table>

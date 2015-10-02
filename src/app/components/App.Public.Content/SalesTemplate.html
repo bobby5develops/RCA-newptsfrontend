@@ -1,0 +1,36 @@
+<div class="content_margin">
+    <style>
+        .bio_image {
+            margin-left: 6px;
+            float: left;
+            margin-top: 20px;
+            height: 55px;
+            line-height: 16px;
+        }
+        .bio_who {
+            margin-left: 6px;
+            float: left;
+            margin-top: 20px;
+            height: 55px;
+            line-height: 16px;
+        }
+        .bio_line{clear: both; height: 150px;}
+    </style>
+    <h1 class="centerColumn-title">
+        Our Salespersons</h1>
+    <p style="font-size: 12px;">
+        The RCA team is a multi-discipline group with expertise in research, data analysis and delivery. We share an interest in commercial real estate and providing world-class customer service.</p>
+
+    <div ng-repeat="salesperson in salesCtrl.salespersons">
+        <div class="bio_line">
+            <span class="bio_image">
+                <a ui-sref="app.public.salesItem({salesItem: salesperson.id_tx})" title="{{salesperson.name_tx}} - {{salesperson.title_tx}}" class="salespersonship_img"><img src="https://www.rcanalytics.com/images/photos/{{salesperson.imageSrc_tx}}" width="85" height="126" alt="{{salesperson.name_tx}} - {{salesperson.title_tx}}"></a>
+            </span>
+            <span class="bio_who">
+                <br>
+                <a ui-sref="app.public.salesItem({salesItem: salesperson.id_tx})" title="{{salesperson.name_tx}} - {{salesperson.title_tx}}">{{salesperson.name_tx}}<span ng-if="salesperson.suffixes_tx.length" >, {{salesperson.suffixes_tx}}</span></a>
+                <br>{{salesperson.title_tx}}
+            </span>
+        </div>
+    </div>
+</div>

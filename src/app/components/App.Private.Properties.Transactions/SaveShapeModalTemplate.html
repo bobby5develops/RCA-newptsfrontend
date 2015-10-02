@@ -1,0 +1,11 @@
+<div class="modal-header" style="text-align: center; vertical-align: middle;">
+    <h3 class="modal-title">Save Custom Shape</h3>
+</div>
+<div class="modal-body" style="text-align: center; vertical-align: middle;">
+    <label>Save Your Shape For Later Use</label><br/>
+    <input type="text" placeholder="Enter shape name here" ng-model="saveShapeCtrl.ShapeName" ng-required="true" style="width: 80%;" autofocus/>
+</div>
+<div class="modal-footer" style="text-align: center;">
+    <button class="btn btn-primary" type="button" ng-click="saveShapeCtrl.save()" ng-disabled="!saveShapeCtrl.ShapeName">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="saveShapeCtrl.cancel()">Cancel</button>
+</div>

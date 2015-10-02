@@ -1,0 +1,183 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li>
+                    <br/>
+                    <br/>
+                </li>
+            </ul>
+
+            <ul class="nav nav-sidebar">
+                <li>
+                    <property-type-filter>
+                    </property-type-filter>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <geography-filter
+                            set-geography-filters="transactionsCtrl.transactionFiltersService.setGeographyFilters(include, exclude)">
+                    </geography-filter>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <trans-filter-menu style="max-width: inherit"
+                                   trans-filters="transactionsCtrl.transactionFiltersService.TransactionSearchFilters">
+                </trans-filter-menu>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <keyword-filters></keyword-filters>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <prop-detail-menu
+                        prop-filters="transactionsCtrl.transactionFiltersService.PropertyDetailsFilter"></prop-detail-menu>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <company-filters></company-filters>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-md-10 main">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" aria-label="transactions">{{'TRANSACTIONS' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-default" aria-label="players" ng-click="transactionsCtrl.routingHelperService.goBuyers()">{{'PLAYERS' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-default" aria-label="app.private.properties.trendstrades">Trends &amp; Trades
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default"
+                                    ng-class="{'btn-primary': transactionsCtrl.isViewModeFullMap}"
+                                    aria-label="{{'MAP_VIEW' | translate}}"
+                                    ng-click="transactionsCtrl.setViewMode('FullMap')">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </button>
+                            <button type="button" class="btn btn-default"
+                                    ng-class="{'btn-primary': transactionsCtrl.isViewModeSplit}"
+                                    aria-label="{{'SPLIT_VIEW' | translate}}"
+                                    ng-click="transactionsCtrl.setViewMode('Split')">
+                                <span class="glyphicon glyphicon-globe"></span> | <span
+                                    class="glyphicon glyphicon-align-justify"></span>
+                            </button>
+                            <button type="button" class="btn btn-default"
+                                    ng-class="{'btn-primary': transactionsCtrl.isViewModeFullTable}"
+                                    aria-label="{{'LIST_VIEW' | translate}}"
+                                    ng-click="transactionsCtrl.setViewMode('FullTable')">
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-4" style="padding-bottom: 10px;">
+                    <geo-auto selected-suggestion="transactionsCtrl.selectedSuggestion"></geo-auto>
+                </div>
+            </div>
+
+            <div class="row">
+                <!--<span class="col-md-3">-->
+                    <!--&lt;!&ndash;<date-range-filter&ndash;&gt;-->
+                            <!--&lt;!&ndash;date-range="transactionsCtrl.transactionFiltersService.TransactionSearchFilters.DateRange"></date-range-filter>&ndash;&gt;-->
+                <!--</span>-->
+                <span class="col-md-2" ng-show="transactionsCtrl.isMapZoomLevelPin && !transactionsCtrl.isViewModeFullTable">
+                    <select ng-model="transactionsCtrl.pinModeString" class="form-control input-sm">
+                        <option value="Transactions">Transactions</option>
+                        <option value="QScore">Q Score</option>
+                    </select>
+                </span>
+                <span class="col-md-2" ng-show="transactionsCtrl.lastShapeDrawn !== null || transactionsCtrl.selectedSuggestion !== null">
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="transactionsCtrl.ClearLastShapeDrawn()">Clear Shape</button>
+                </span>
+            </div>
+            <br/>
+
+            <div class="row">
+                <ui-gmap-google-map
+                        ng-show="transactionsCtrl.isViewModeFullMap || transactionsCtrl.isViewModeSplit"
+                        ng-class="{'col-md-12': transactionsCtrl.isViewModeFullMap, 'col-md-7': transactionsCtrl.isViewModeSplit}"
+                        center="transactionsCtrl.mapCenter"
+                        bounds="transactionsCtrl.mapBounds"
+                        zoom="transactionsCtrl.transactionFiltersService.MapZoom"
+                        events="transactionsCtrl.mapEvents"
+                        control="transactionCtrl.mapControl">
+                    <ui-gmap-drawing-manager options="transactionsCtrl.mapDrawingManagerOptions"
+                                             control="transactionsCtrl.mapDrawingManager"
+                                             events="transactionsCtrl.mapDrawingEventHandler"></ui-gmap-drawing-manager>
+
+
+                    <ui-gmap-polygon ng-repeat="parcel in transactionsCtrl.mapParcels track by parcel.id" static="true"
+                                     path="parcel.geometry" stroke="parcel.stroke" visible="parcel.visible"
+                                     fill="parcel.fill" events="transactionsCtrl.mapParcelEvents">
+                    </ui-gmap-polygon>
+                </ui-gmap-google-map>
+                <div ng-class="{'col-md-12': transactionsCtrl.isViewModeFullTable, 'col-md-5': transactionsCtrl.isViewModeSplit}">
+
+                    <a ng-if="transactionsCtrl.isMapZoomLevelPin" ng-click="transactionsCtrl.downloadExcel();">Download Excel</a>
+
+                    <div ng-if="!transactionsCtrl.isMapZoomLevelPin && !transactionsCtrl.isViewModeFullMap"
+                         ng-include="'Components.App.Private.Properties.Transactions.Templates.BubbleTransactionsTableTemplate'"></div>
+
+                    <div ng-if="transactionsCtrl.isMapZoomLevelPin && !transactionsCtrl.isViewModeFullMap" style="overflow-y: auto; height: 500px;">
+                        <pin-transactions-table model="transactionsCtrl.pinSearchResults"
+                                                currency="transactionsCtrl.pinUserPreferences.currency"
+                                                measurement="transactionsCtrl.pinUserPreferences.measurementUnit"
+                                                selected="transactionsCtrl.setSelectedProperty(record)"
+                                                full="transactionsCtrl.isViewModeFullTable">
+                        </pin-transactions-table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="panel panel-primary" ng-if="transactionsCtrl.isMapZoomLevelPin">
+                        <div class="panel-heading">PROPERTY DETAILS</div>
+                        <div class="panel-body" style="height: 160px">
+
+                            <div class="col-sm-3">
+                                <div id="previewStreetView" class="street-view"></div>
+                            </div>
+
+                            <div class="col-sm-9">
+                                <pin-transactions-table model="transactionsCtrl.selectedProperty"
+                                                        currency="transactionsCtrl.pinUserPreferences.currency"
+                                                        measurement="transactionsCtrl.pinUserPreferences.measurementUnit"
+                                                        full="true" preview="true">
+                                </pin-transactions-table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

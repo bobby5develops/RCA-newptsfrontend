@@ -1,0 +1,189 @@
+{
+  "took": 6,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "searchtable",
+        "_type": "IndexableSearchTable",
+        "_id": "AU3ZouvpB4WtYhW7UXUo",
+        "_score": 1.0,
+        "_source": {
+          "propertyKey_id": 807233,
+          "property_id": 209477,
+          "deal_id": 214647,
+          "status_id": 1,
+          "status_tx": "closed",
+          "status_dt": "2007-07-12T00:00:00",
+          "transType_id": 1,
+          "transType_tx": "Sale",
+          "transSubType_id": 2,
+          "transSubType_tx": "Conventional Sale",
+          "propertyType_id": 6,
+          "propertyType_tx": "Office",
+          "propertySubType_id": 7,
+          "propertySubType_tx": "Office - CBD",
+          "propertyName_tx": "A Big Building",
+          "addressStd_tx": "100-104 5th Ave",
+          "postalCode_id": 4016,
+          "postalCode_tx": "10011",
+          "city_id": 107096,
+          "city_tx": "New York",
+          "county_id": 1859,
+          "county_tx": "New York",
+          "stateProv_id": 21,
+          "stateProv_tx": "NY",
+          "country_id": 1,
+          "country_tx": "US",
+          "country_cd": "US",
+          "theatre_id": 1,
+          "theatre_tx": "Northern America",
+          "continent_id": 1,
+          "continent_tx": "North America",
+          "metro_id": 69,
+          "metro_tx": "NYC Metro",
+          "rCASubTheatre_id": 24,
+          "rCASubTheatre_tx": "United States Other",
+          "rCATheatre_id": 1,
+          "rCATheatre_tx": "United States",
+          "rCAZone_id": 1,
+          "rCAZone_tx": "North America & South America",
+          "region_id": 3,
+          "region_tx": "Northeast",
+          "zone_id": 9,
+          "zone_tx": "Northeast",
+          "market_id": 67,
+          "market_tx": "Manhattan",
+          "subMarket_id": 210,
+          "subMarket_tx": "Midtown South",
+          "units_dbl": 303823.0,
+          "geoCodeQuality_id": 9,
+          "numberOfProperties_nb": 1,
+          "numberBuildings_nb": 1,
+          "landArea_dbl": 194994,
+          "lenderInterestRate_pct": "4.2%",
+          "parkingSpots_nb": 20,
+          "currentOwner": {
+            "name": "Mike Realty",
+            "address_tx": "123 Main St",
+            "city_tx": "New York",
+            "stateProv_tx": "NY",
+            "country_tx": "US",
+            "yearsOwned_nb": 4,
+            "capitalGroup": "Private",
+            "knownHoldings_nb": 10,
+            "knownHoldingsValue_dbl": 100000000
+          },
+          "players": [
+            {
+              "role": "Buyer",
+              "name": "Boston Properties",
+              "address": "4416 East Hwy",
+              "city": "Bethesda",
+              "stateProv": "MD",
+              "postalCode": 20814,
+              "country": "US",
+              "webiste": "www.google.com",
+              "type": "Private",
+              "acquisitions": 149,
+              "dispositions": 100
+            },
+            {
+              "role": "Buyer",
+              "name": "Boston Properties",
+              "address": "4416 East Hwy",
+              "city": "Bethesda",
+              "stateProv": "MD",
+              "postalCode": 20814,
+              "country": "US",
+              "webiste": "www.google.com",
+              "type": "Private",
+              "acquisitions": 149,
+              "dispositions": 100
+            },
+            {
+              "role": "Seller",
+              "name": "Avalon Bay",
+              "address": "999 West Hwy",
+              "city": "Albany",
+              "stateProv": "NY",
+              "postalCode": 12345,
+              "country": "US",
+              "webiste": "www.google.com",
+              "type": "Private",
+              "acquisitions": 66,
+              "dispositions": 54
+            },
+            {
+              "role": "Broker",
+              "name": "CBRE",
+              "address": "612 Deadend",
+              "city": "Orlando",
+              "stateProv": "FL",
+              "postalCode": 98765,
+              "country": "US",
+              "webiste": "www.google.com",
+              "type": "Private",
+              "acquisitions": 23,
+              "dispositions": 42
+            }
+          ],
+          "tenants": [
+            {
+              "name": "RCA",
+              "exp": "1/1/2020"
+            },
+            {
+              "name": "H&M",
+              "exp": "1/1/2025"
+            },
+            {
+              "name": "Blah",
+              "exp": "12/12/2022"
+            }
+          ],
+          "lastKnownPrice": 123000000,
+          "currentValue": 123000001,
+          "capRate": 0.062,
+          "status": "closed",
+          "statusDate": "6/1/2015",
+          "statusPriceQualifier": "approx",
+          "comments": "Blackstone plans to reduce stake to 10% by Aug 2019",
+          "lat_dbl": 40.737155,
+          "lon_dbl": -73.9930105,
+          "statusPriceUSD_amt": 110000000.0000,
+          "statusPriceEur_amt": 81360950.0000,
+          "statusPriceGBP_amt": 54830050.0000,
+          "statusPriceJPY_amt": 13549800000.0000,
+          "statusPriceLocal_amt": 0.0,
+          "statusPriceQualifier_tx": "street talk",
+          "statusPricePerUnit_amt": 362.0529,
+          "statusPriceAdjustedUSD_amt": 110000000.0,
+          "statusPriceAdjustedEUR_amt": 81360950.0,
+          "statusPriceAdjustedGBP_amt": 54830050.0,
+          "statusPriceAdjustedJPY_amt": 13549800000.0,
+          "statusPriceAdjustedLocal_amt": 110000000.0,
+          "portfolio_fg": false,
+          "Location_GeoPoint": [
+            -73.9930105,
+            40.737155
+          ],
+          "Location_GeoShape": {
+            "type": "point",
+            "coordinates": [
+              -73.9930105,
+              40.737155
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

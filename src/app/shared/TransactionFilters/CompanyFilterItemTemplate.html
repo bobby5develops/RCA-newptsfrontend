@@ -1,0 +1,24 @@
+<div>
+    <div class="row btn-group" role="group" aria-label="...">
+        <span class="col-md-12">
+            <button type="button" ng-class="{'btn-primary': companyFilterItemCtrl.isFilterAll}" class="btn btn-default" ng-click="companyFilterItemCtrl.setCompanyRole('All')">All</button>
+            <button type="button" ng-class="{'btn-primary': companyFilterItemCtrl.isFilterBuyer}" class="btn btn-default" ng-click="companyFilterItemCtrl.setCompanyRole('Buyer')">Buyer</button>
+            <button type="button" ng-class="{'btn-primary': companyFilterItemCtrl.isFilterSeller}" class="btn btn-default" ng-click="companyFilterItemCtrl.setCompanyRole('Seller')">Seller</button>
+            <button type="button" ng-class="{'btn-primary': companyFilterItemCtrl.isFilterBroker}" class="btn btn-default" ng-click="companyFilterItemCtrl.setCompanyRole('Broker')">Broker</button>
+            <button type="button" ng-class="{'btn-primary': companyFilterItemCtrl.isFilterLender}" class="btn btn-default" ng-click="companyFilterItemCtrl.setCompanyRole('Lender')">Lender</button>
+        </span>
+    </div>
+
+    <div class="row">
+        <span class="col-md-9"><input placeholder="Enter Company Name" type="text" ng-model="companyFilterItemCtrl.input"></span>
+        <span class="col-md-1 radiogroup">
+            <label ng-attr-for="{{::companyFilterItemCtrl.includeRadioUniqueId}}">Inc</label>
+            <input type="radio" ng-attr-id="{{::companyFilterItemCtrl.includeRadioUniqueId}}" name="{{::companyFilterItemCtrl.includeRadioUniqueId}}" ng-value="true" ng-model="companyFilterItemCtrl.include"/>
+        </span>
+        <span class="col-md-1 radiogroup">
+            <label ng-attr-for="{{::companyFilterItemCtrl.excludeRadioUniqueId}}">Exc</label>
+            <input type="radio" ng-attr-id="{{::companyFilterItemCtrl.excludeRadioUniqueId}}" name="{{::companyFilterItemCtrl.excludeRadioUniqueId}}" ng-value="false" ng-model="companyFilterItemCtrl.include"/>
+        </span>
+    </div>
+</div>
+

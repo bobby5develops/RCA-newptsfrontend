@@ -1,0 +1,43 @@
+<div>
+    <div class="row">
+        <div class="col-md-6">
+            <select ng-model="dateRangeCtrl.DateType" onchange="" class="form-control input-sm">
+                <option value="YearToDate">Year To Date</option>
+                <option value="LastYear">Last Year ({{::dateRangeCtrl.LastYear}})</option>
+                <option value="LastQuarter">Last Quarter (Q{{::dateRangeCtrl.LastQuarter}})</option>
+                <!--<option value="Past6Months">Past 6 Months</option>-->
+                <option value="Past12Months">Past 12 Months</option>
+                <option value="Past24Months">Past 24 Months</option>
+                <option value="Last5Years">Last 5 Years</option>
+                <option value="AllTime">All RCA History</option>
+                <option value="Custom">Custom</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-if="dateRangeCtrl.DateType === 'Custom'" class="col-md-12"><br/>
+            <label>Status Date After:</label><br/>
+            <div class="input-group col-md-7">
+                <input type="text" placeholder="mm/dd/yyyy" class="form-control" ng-model="dateRangeCtrl.DateRange.StartDate" datepicker-popup="MM/dd/yyyy"
+                       min-date="dateRangeCtrl.StartMinDate" max-date="dateRangeCtrl.StartMaxDate"
+                       is-open="dateRangeCtrl.CalendarStatus.StartOpened"
+                       datepicker-options="dateRangeCtrl.DateOptions" ng-required="true"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="dateRangeCtrl.OpenDatePicker($event, true)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+            <label>Status Date Before:</label>
+            <div class="input-group col-md-7">
+                <input type="text" placeholder="mm/dd/yyyy" class="form-control" datepicker-popup="MM/dd/yyyy"
+                           ng-model="dateRangeCtrl.DateRange.EndDate" is-open="dateRangeCtrl.CalendarStatus.EndOpened"
+                           min-date="dateRangeCtrl.EndMinDate" max-date="dateRangeCtrl.EndMaxDate"
+                           datepicker-options="dateRangeCtrl.DateOptions" ng-required="true"/>
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="dateRangeCtrl.OpenDatePicker($event, false)"><i
+                      class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
+        </div>
+    </div>
+</div>

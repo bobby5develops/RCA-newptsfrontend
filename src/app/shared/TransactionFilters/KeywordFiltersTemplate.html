@@ -1,0 +1,20 @@
+<div class="col-md-1" dropdown>
+    <button style="width: 135px;" class="btn btn-default dropdown-toggle" type="button" id="keywordMenuDropdown" data-toggle="menu"
+            aria-haspopup="true" aria-expanded="true" dropdown-toggle>
+        {{"KEYWORD_MENU" | translate}}
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu" style="margin-left: 10px;" aria-labelledby="keywordMenuDropdown">
+        <div ng-click="$event.stopPropagation();">
+            <div class="container" style="max-width: 525px;">
+
+                <div id="keywords" ng-repeat="keywordFilter in keywordFiltersCtrl.keywordFilters">
+                    <keyword-filter-item keyword="keywordFilter"></keyword-filter-item>
+                </div>
+                <button class="btn btn-default" ng-click="keywordFiltersCtrl.addKeyword()"><span
+                        class="glyphicon glyphicon-plus"></span></button>
+                Add Another!
+            </div>
+        </div>
+    </div>
+</div>

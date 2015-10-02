@@ -1,0 +1,57 @@
+<div class="page wrapper city-background" style="">
+
+  <div ng-if="!!loginCtrl.loginErrorMessage" class="message-container fade-animation">
+    <div class="error-message">
+      <strong>{{loginCtrl.loginErrorMessage}}</strong>
+    </div>
+  </div>
+
+  <div class="login-panel">
+    <!--<div class="login-header">-->
+      <!--<img src="../../../assets/images/logo/RCA Logo Transparent.png">-->
+    <!--</div>-->
+    <div class="login-body">
+
+      <div class="ui hidden divider"></div>
+
+        <form id="loginForm" name="loginCtrl.loginForm" novalidate>
+            <div class="form-group"
+                 ng-class="{'error' : loginCtrl.loginForm.username.$dirty && loginCtrl.loginForm.username.$invalid}">
+                <label for="usernameInput">{{'USERNAME' | translate}}</label>
+                <i class="user icon"></i>
+                <input id="usernameInput"
+                       type="text"
+                       ng-attr-placeholder="{{'USERNAME' | translate}}"
+                       name="username"
+                       ng-model="loginCtrl.username"
+                       required
+                       autocomplete="off"
+                       ng-disabled="loginCtrl.isAuthenticating"
+                       class="form-control">
+            </div>
+            <br>
+
+            <div class="form-group"
+                 ng-class="{'error' : loginCtrl.loginForm.password.$dirty && loginCtrl.loginForm.password.$invalid}">
+                <label for="passwordInput">{{'PASSWORD' | translate}}</label>
+                <i class="lock icon"></i>
+                <input id="passwordInput"
+                       type="password"
+                       ng-attr-placeholder="{{'PASSWORD' | translate}}"
+                       name="password"
+                       ng-model="loginCtrl.password"
+                       ng-disabled="loginCtrl.isAuthenticating"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="ui hidden divider"></div>
+            <button id="loginBtn" type="submit" class="btn btn-primary"
+                    ng-click="loginCtrl.login()"
+                    ng-class="{'loading': loginCtrl.isAuthenticating}"
+                    ng-disabled="!loginCtrl.loginForm || !loginCtrl.loginForm.$valid">
+                {{"LOGIN" | translate}}
+            </button>
+        </form>
+    </div>
+  </div>
+</div>

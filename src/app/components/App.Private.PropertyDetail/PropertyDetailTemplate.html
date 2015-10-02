@@ -1,0 +1,743 @@
+<div class="container property-detail">
+    <h1>Property Detail</h1>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Location</div>
+                <div class="panel-body">
+
+                    <div class="col-sm-5">
+                        <div id="propName">
+                            <h4 ng-cloak>{{propertyDetailCtrl.propertyDetail.propertyName_tx}}</h4>
+                        </div>
+                        <div id="address">
+                            <h4>{{propertyDetailCtrl.propertyDetail.addressStd_tx}}</h4>
+                        </div>
+                        <div id="cityStateCountry" ng-cloak class="ng-cloak">
+                            <h4 ng-cloak>
+                                {{propertyDetailCtrl.propertyDetail.city_tx}},&nbsp;
+                                {{propertyDetailCtrl.propertyDetail.stateProv_tx}}/&nbsp;
+                                {{propertyDetailCtrl.propertyDetail.country_tx}}
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 form-horizontal row-half-padding">
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label text-x-small">Country:</label>
+
+                            <div class="col-sm-8">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.country_tx"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label text-x-small">Postal Code:</label>
+
+                            <div class="col-sm-8">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.postalCode_tx"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label text-x-small">County:</label>
+
+                            <div class="col-sm-8">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.county_tx"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label text-x-small">Alt. Name/Address:</label>
+
+                            <div class="col-sm-8">
+                                <span class="form-control-static text-x-small"
+                                      ng-bind="propertyDetailCtrl.propertyDetail.altName_tx"></span>
+                                <span class="form-control-static text-x-small"
+                                      ng-if="propertyDetailCtrl.propertyDetail._tx && propertyDetailCtrl.propertyDetail.altAddressList_tx"></span>
+                                <span class="form-control-static text-x-small"
+                                      ng-bind="propertyDetailCtrl.propertyDetail.altAddressList_tx"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-3 form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label text-x-small">Metro:</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.metro_tx"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label text-x-small">Market:</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.market_tx"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label text-x-small">Submarket:</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.subMarket_tx"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label text-x-small">APN:</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static text-x-small"
+                                   ng-bind="propertyDetailCtrl.propertyDetail.apnList_tx"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- This section is sub-gridded to follow the old layout for now -->
+    <div class="row">
+
+        <div class="col-sm-5">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Characteristics</div>
+                        <div class="panel-body">
+
+                            <div class="col-sm-6 form-horizontal row-half-padding">
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small">Property Type:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.propertyType_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small">Subtype:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.propertySubType_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small">Buildings:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.buildings_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Stories:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.floors_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Land Area:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-if="propertyDetailCtrl.propertyDetail.landAreaAcres_dbl">
+                                            {{propertyDetailCtrl.propertyDetail.landAreaAcres_dbl}} acres
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Interest:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.interestConveyed_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Parking:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.parking_tx"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-6 form-horizontal">
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Units/Rentable Area:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-if="propertyDetailCtrl.propertyDetail.units_dbl">
+                                            {{propertyDetailCtrl.propertyDetail.units_dbl | number: 0}}
+                                            {{propertyDetailCtrl.propertyDetail.unitType_tx}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Occupancy:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.occupancyRate_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Year Built:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.yearBuilt_nb"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Year
+                                        Renovated:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.yearRenovated_nb"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Current Walk
+                                        Score:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.responseWalkscore_nb"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Current Transit
+                                        Score:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.transitScore_nb"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Major Tenants:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.majorTenants_tx"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-sm-12 text-x-small">
+                                <label>Comments:</label> <span
+                                    ng-bind="propertyDetailCtrl.propertyDetail.streetRetail_tx"></span>
+                            </div>
+
+                            <div class="col-sm-12 text-x-small">
+                                <label>Geocode Quality:</label><!--span>???</span-->
+                            </div>
+
+                            <div class="col-sm-12">
+
+                                <ui-gmap-google-map center="propertyDetailCtrl.satelliteMap.center"
+                                                    zoom="propertyDetailCtrl.satelliteMap.zoom"
+                                                    options="propertyDetailCtrl.satelliteMap.options">
+                                    <ui-gmap-marker models="propertyDetailCtrl.satelliteMarker" coords="'self'">
+                                    </ui-gmap-marker>
+                                    <ui-gmap-marker coords="propertyDetailCtrl.satelliteMarker.coords"
+                                                    options="propertyDetailCtrl.satelliteMarker.options"
+                                                    idkey="propertyDetailCtrl.satelliteMarker.id">
+                                </ui-gmap-google-map>
+                                <div id="panorama" class="street-view"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-7">
+
+            <div class="row">
+                <!-- Transaction -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Transaction</div>
+                        <div class="panel-body">
+
+                            <div class="col-sm-5 form-horizontal row-half-padding">
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Status:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.status_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Price:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.status_tx"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-7 form-horizontal row-half-padding">
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Purpose:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small"
+                                           ng-bind="propertyDetailCtrl.propertyDetail.buyerObjective_tx"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Local
+                                        Currency:</label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static text-x-small">
+                                            {{propertyDetailCtrl.propertyDetail.closePriceLocal_amt | currency:'':0 }}
+                                            <span ng-if="!!propertyDetailCtrl.propertyDetail.localCurrencyCode_tx">
+                                                ({{propertyDetailCtrl.propertyDetail.localCurrencyCode_tx}})
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label text-x-small text-right">Yield/Cap
+                                        rate:</label>
+
+                                    <div class="col-sm-6">
+                                        <!--p class="form-control-static text-x-small"
+                                           ng-bind="'???'"></p-->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-12 text-x-small">
+                                <label>Comments:</label><!--span>???</span-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Players -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Players</div>
+                        <div class="panel-body">
+
+                            <div class="col-sm-12">
+                                <table class="table text-x-small">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2">
+                                            Players
+                                        </th>
+                                        <th>
+                                            Contact
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                        <th>
+                                            Acq
+                                        </th>
+                                        <th>
+                                            Disp
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody ng-repeat="player in propertyDetailCtrl.players">
+                                    <tr ng-if="::!!player.childCompany_tx">
+                                        <td class="text-right">
+                                            {{::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).label}}:
+                                        </td>
+                                        <td>
+                                            {{::player.childCompany_tx}}
+                                        </td>
+                                        <td>
+                                            {{::propertyDetailCtrl.formatAddress(player.childAddress_tx,
+                                            player.childCity_tx, player.childStateProv_tx,
+                                            player.childPostalCode_tx, player.childCountry_tx)}}
+                                            <div ng-if="::!!player.website_tx">
+                                                <a target="_blank" href="{{::player.website_tx}}">Website</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.childInvestorGroup_tx}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.childTotalAcquisitionsUSD_amt | currency:"$":0}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.childTotalDispositionsUSD_amt | currency:"$":0}}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="::!!player.principal_tx">
+                                        <td class="text-right">
+                                            <!-- If Child use AKA -->
+                                            <p ng-if="::!!player.childCompany_tx">
+                                                AKA:
+                                            </p>
+                                            <!-- If no Child use Resolve Role -->
+                                            <p ng-if="::!player.childCompany_tx">
+                                                {{::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).label}}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            {{::player.principal_tx}}
+                                        </td>
+                                        <td>
+                                            {{::propertyDetailCtrl.formatAddress(player.principalAddress_tx,
+                                            player.principalCity_tx, player.principalStateProv_tx,
+                                            player.principalPostalCode_tx, player.principalCountry_tx)}}
+                                            <div ng-if="::!!player.website_tx">
+                                                <a target="_blank" href="{{::player.website_tx}}">Website</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.investorGroup_tx}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.totalAcquisitionsUSD_amt | currency:"$":0}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-if="::propertyDetailCtrl.resolveDealRole(player.dealRole_tx).extended">
+                                                {{::player.totalDispositionsUSD_amt | currency:"$":0}}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="::!!player.legalEntityName_tx">
+                                        <td class="text-right">
+                                            Entity:
+                                        </td>
+                                        <td>
+                                            {{::player.legalEntityName_tx}}
+                                        </td>
+                                        <td>
+                                            {{::propertyDetailCtrl.formatAddress(player.legalEntityAddress_tx,
+                                            player.legalCity_tx, player.legalStateProv_tx,
+                                            player.legalPostalCode_tx, player.legalCountry_tx)}}
+                                        </td>
+                                        <td>
+                                            <!-- N/A -->
+                                        </td>
+                                        <td>
+                                            <!-- N/A -->
+                                        </td>
+                                        <td>
+                                            <!-- N/A -->
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financing -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Financing</div>
+                        <div class="panel-body">
+
+                            <div class="row" ng-repeat="finance in propertyDetailCtrl.financing">
+                                <div class="col-sm-12 text-x-small">
+                                    <label>Summary:</label><b>{{::finance.loanUSD_amt | currency:"$":0}}
+                                    {{::finance.loanType_tx}}</b>
+                                </div>
+
+                                <div class="col-sm-4 form-horizontal row-half-padding">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Loan
+                                            Status:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanPerformanceStatus_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Loan Type:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanType_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Loan
+                                            Amount:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanUSD_amt | currency:'$':0"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Loan
+                                            Interest Rate:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small" ng-if="::finance.lenderInterestRate_pct">
+                                                {{::(finance.lenderInterestRate_pct * 100| number :1)}} ({{finance.lenderInterestRateType_tx}})
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Amortization
+                                            Type:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanAmortizationType_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Term:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small">
+                                                {{::finance.loanTermMonths_tx}} months</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-4 form-horizontal row-half-padding">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Originator:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.originator_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Lender:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.lender_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Lender
+                                            Group:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.lenderGroup_tx"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Original LTV:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small" ng-if="::finance.loanLTVOrig_dbl">
+                                                {{::finance.loanLTVOrig_dbl * 100 | number : 1}}%
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Loan dscr:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small" ng-if="::finance.loanDSCR_dbl">
+                                                {{::finance.loanDSCR_dbl}}x
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Debt Yield:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small" ng-if="finance.debtYield_pct">
+                                                {{::(finance.debtYield_pct | number :1)}}%
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-4 form-horizontal row-half-padding">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Origination:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanOrig_dt | date:'MM/dd/yyyy'"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label text-x-small text-right">Original
+                                            Maturity:</label>
+
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static text-x-small"
+                                               ng-bind="::finance.loanMaturity_dt | date:'MM/dd/yyyy'"></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- TODO Temp Divider until hr is fixed -->
+                                <div ng-show="!$last" class="col-sm-10 col-sm-offset-1">
+                                    <div class="divider"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Transactions</div>
+                        <div class="panel-body">
+
+                            <lolli-line-chart data="propertyDetailCtrl.transHistoryChartData"
+                                              options="propertyDetailCtrl.transHistoryChartOptions">
+                            </lolli-line-chart>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">History</div>
+                        <div class="panel-body">
+
+                            <table class="table text-x-small">
+                                <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Trans Type</th>
+                                    <th>Player</th>
+                                    <th>Notes</th>
+                                    <th>Amount</th>
+                                    <th>Qualifier</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="record in propertyDetailCtrl.history">
+                                    <td>
+                                        {{::record.transactionDate_tx}}
+                                    </td>
+                                    <td>
+                                        {{::record.transactionType_tx}}
+                                    </td>
+                                    <td>
+                                        <div ng-bind-html="::propertyDetailCtrl.adaptHistoryPlayer(record.player_tx)"></div>
+                                    </td>
+                                    <td>
+                                        {{::record.eventDescription_tx}}
+                                    </td>
+                                    <td>
+                                        <div ng-if="::record.transactionAmount_amt > 0">
+                                            {{::record.transactionAmount_amt | currency : record.localCurrencyCode_tx : 0}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{::record.transactionQualifier_tx}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

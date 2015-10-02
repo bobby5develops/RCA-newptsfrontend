@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBFD01F9-E642-407F-B227-91F33AB34318}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="shims\angular-bootstrap.js" />
+    <Content Include="shims\angular-google-maps.js" />
+    <Content Include="shims\angular-logger.js" />
+    <Content Include="shims\angular-numeraljs.js" />
+    <Content Include="shims\angular-nvd3.js" />
+    <Content Include="shims\angular-rangeSlider.js" />
+    <Content Include="shims\angular-translate.js" />
+    <Content Include="shims\sprintf-js.js" />
+    <Content Include="shims\ui-router-extras-shim.js" />
+    <Content Include="src\app\components\App.Private.CapitalFlows\CapitalFlowsTemplate.html" />
+    <Content Include="src\app\components\App.Private.Home\HomeTemplate.html" />
+    <Content Include="src\app\components\App.Private.Home\images\iconCapFlows.svg" />
+    <Content Include="src\app\components\App.Private.Home\images\iconInvestors.svg" />
+    <Content Include="src\app\components\App.Private.Home\images\iconProperties.svg" />
+    <Content Include="src\app\components\App.Private.Home\images\iconTrends.svg" />
+    <Content Include="src\app\components\App.Private.Investors\InvestorsTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Players\BrokersTabTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Players\BuyersTabTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Players\PlayersTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Players\SellersTabTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\BubbleTransactionsTableTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\CustomShapeLegendTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\PinTransactionsTableTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\QScoreLegendTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\SaveShapeModalTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\Transactions.scss" />
+    <Content Include="src\app\components\App.Private.Properties.Transactions\TransactionsTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties.TrendsTrades\TrendsTradesTemplate.html" />
+    <Content Include="src\app\components\App.Private.Properties\PropertiesTemplate.html" />
+    <Content Include="src\app\components\App.Private.Trends\TrendsTemplate.html" />
+    <Content Include="src\app\components\App.Private.User.Profile\ProfileTemplate.html" />
+    <Content Include="src\app\components\App.Private\PrivateTemplate.html" />
+    <Content Include="src\app\components\App.Public.Home\HomeTemplate.html" />
+    <Content Include="src\app\components\App.Public.Login\Login.scss" />
+    <Content Include="src\app\components\App.Public.Login\LoginTemplate.html" />
+    <Content Include="src\app\components\App.Public\PublicTemplate.html" />
+    <Content Include="src\app\components\App\AppTemplate.html" />
+    <Content Include="src\app\i18n\de.json" />
+    <Content Include="src\app\i18n\en.json" />
+    <Content Include="src\app\i18n\es.json" />
+    <Content Include="src\app\i18n\fr.json" />
+    <Content Include="src\app\index.scss" />
+    <Content Include="src\app\shared\AutocompleteWidget\Autocomplete.scss" />
+    <Content Include="src\app\shared\AutocompleteWidget\AutocompleteTemplate.html" />
+    <Content Include="src\app\shared\Mapping\TransactionPinTemplate.html" />
+    <Content Include="src\app\shared\Navbar\navbar.scss" />
+    <Content Include="src\app\shared\Navbar\NavbarTemplate.html" />
+    <Content Include="src\app\shared\PropertyDetail\PropertyDetail.scss" />
+    <Content Include="src\app\shared\PropertyDetail\PropertyDetailTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\CompanyFilterMenuTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\CompanyItemTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\DateRangeTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\GeoAutocompleteTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\GeographyFilterItemChildrenTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\GeographyFilterItemTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\GeographyFilterTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterWidget.scss" />
+    <Content Include="src\app\shared\TransactionFilters\KeywordFilterMenuTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\KeywordItemTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PinViewsTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PropertyDetailsFilterMenuTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PropertyTypeFilterItemChildrenTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PropertyTypeFilterItemTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PropertyTypeFilterTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterStyles.scss" />
+    <Content Include="src\app\shared\TransactionFilters\TransactionsFilterMenuTemplate.html" />
+    <Content Include="src\app\shared\TransactionFilters\TransactionsFilterMenuWidget\TransactionsFilterMenuWidget.scss" />
+    <Content Include="src\app\shared\TransactionHistoryChartWidget\TransactionHistoryChartStyles.scss" />
+    <Content Include="src\app\shared\TransactionHistoryChartWidget\TransactionHistoryChartTemplate.html" />
+    <Content Include="src\app\shared\UserPreferences\UserPreferencesTemplate.html" />
+    <Content Include="src\app\vendor.scss" />
+    <Content Include="src\assets\images\backgrounds\city_dark.jpg" />
+    <Content Include="src\assets\images\bsb\icon_broker.gif" />
+    <Content Include="src\assets\images\bsb\icon_Broker1.gif" />
+    <Content Include="src\assets\images\bsb\icon_broker_seller.gif" />
+    <Content Include="src\assets\images\bsb\icon_lender.gif" />
+    <Content Include="src\assets\images\bsb\icon_owner.gif" />
+    <Content Include="src\assets\images\bsb\icon_seller.gif" />
+    <Content Include="src\assets\images\bubbles\m1.png" />
+    <Content Include="src\assets\images\bubbles\m10.png" />
+    <Content Include="src\assets\images\bubbles\m11.png" />
+    <Content Include="src\assets\images\bubbles\m12.png" />
+    <Content Include="src\assets\images\bubbles\m13.png" />
+    <Content Include="src\assets\images\bubbles\m14.png" />
+    <Content Include="src\assets\images\bubbles\m2.png" />
+    <Content Include="src\assets\images\bubbles\m3.png" />
+    <Content Include="src\assets\images\bubbles\m4.png" />
+    <Content Include="src\assets\images\bubbles\m5.png" />
+    <Content Include="src\assets\images\bubbles\m6.png" />
+    <Content Include="src\assets\images\bubbles\m7.png" />
+    <Content Include="src\assets\images\bubbles\m8.png" />
+    <Content Include="src\assets\images\bubbles\m9.png" />
+    <Content Include="src\assets\images\icon_bldg.png" />
+    <Content Include="src\assets\images\logo\logoRealCap.svg" />
+    <Content Include="src\assets\images\logo\RCA Logo Transparent.png" />
+    <Content Include="src\assets\images\mobile_icons_color\apartment.png" />
+    <Content Include="src\assets\images\mobile_icons_color\blueq.png" />
+    <Content Include="src\assets\images\mobile_icons_color\dev.png" />
+    <Content Include="src\assets\images\mobile_icons_color\greenq.png" />
+    <Content Include="src\assets\images\mobile_icons_color\greyq.png" />
+    <Content Include="src\assets\images\mobile_icons_color\hotel.png" />
+    <Content Include="src\assets\images\mobile_icons_color\industrial.png" />
+    <Content Include="src\assets\images\mobile_icons_color\office.png" />
+    <Content Include="src\assets\images\mobile_icons_color\orangeq.png" />
+    <Content Include="src\assets\images\mobile_icons_color\other.png" />
+    <Content Include="src\assets\images\mobile_icons_color\redq.png" />
+    <Content Include="src\assets\images\mobile_icons_color\retail.png" />
+    <Content Include="src\assets\images\mobile_icons_color\shc.png" />
+    <Content Include="src\assets\images\mobile_icons_color\yellowq.png" />
+    <Content Include="src\assets\images\RCA_Email_Signature_Logo.jpg" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\testdata\propdetail.stub.json" />
+    <Content Include="src\testdata\proptypes.json" />
+    <Content Include="src\testdata\sampleCapStack.png" />
+    <Content Include="src\testdata\statesAndCountries.json" />
+    <Content Include="src\testdata\trans-history-chart.stub.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include=".tmp\typings\angular-translate\angular-translate.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angular-ui-router\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\bootstrap-slider\bootstrap-slider.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\d3\d3.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\geojson\geojson.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\googlemaps\google.maps.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\numeraljs\numeraljs.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\sprintf-js\sprintf-js.d.ts" />
+    <TypeScriptCompile Include=".tmp\typings\tsd.d.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.CapitalFlows\CapitalFlowsModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.CapitalFlows\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.CapitalFlows\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Home\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Home\HomeModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Home\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Investors\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Investors\InvestorsModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Investors\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Brokers\BrokersController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Brokers\IBroker.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Buyers\Buyer.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Buyers\BuyerData.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Buyers\BuyersController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\PlayersController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\PlayersModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Sellers\Seller.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Sellers\SellerData.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Sellers\SellersController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Players\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\IBubbleTransactionItem.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\IPinTransactionItem.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\PinModeEnum.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\PinTransactionsTableDirective.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\TransactionsController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\TransactionsModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.Transactions\ViewModeEnum.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.TrendsTrades\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.TrendsTrades\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties.TrendsTrades\TrendsTradesModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties\PropertiesModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Properties\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Trends\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Trends\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.Trends\TrendsModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.User.Profile\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.User.Profile\ProfileController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.User.Profile\ProfileModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private.User.Profile\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private\PrivateModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Private\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Home\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Home\HomeModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Home\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Login\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Login\LoginController.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Login\LoginModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public.Login\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public\PublicModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App.Public\Templates.ts" />
+    <TypeScriptCompile Include="src\app\components\App\AppModule.ts" />
+    <TypeScriptCompile Include="src\app\components\App\Constants.ts" />
+    <TypeScriptCompile Include="src\app\components\App\Templates.ts" />
+    <TypeScriptCompile Include="src\app\config\Authentication\AuthenticationConfiguration.ts" />
+    <TypeScriptCompile Include="src\app\config\Authentication\AuthInterceptorService.ts" />
+    <TypeScriptCompile Include="src\app\config\Authentication\IHttpInterceptor.ts" />
+    <TypeScriptCompile Include="src\app\config\ConfigModule.ts" />
+    <TypeScriptCompile Include="src\app\config\GoogleMapsConfiguration.ts" />
+    <TypeScriptCompile Include="src\app\config\Routing\RouteConfiguration.ts" />
+    <TypeScriptCompile Include="src\app\config\Routing\RouteConstants.ts" />
+    <TypeScriptCompile Include="src\app\config\Routing\RouteMediator.ts" />
+    <TypeScriptCompile Include="src\app\config\Translate\TranslateConfiguration.ts" />
+    <TypeScriptCompile Include="src\app\config\Translate\TranslationLoaderFactory.ts" />
+    <TypeScriptCompile Include="src\app\config\Translate\Translations.ts" />
+    <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\Authentication\AuthenticationModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\Authentication\AuthenticationService.ts" />
+    <TypeScriptCompile Include="src\app\shared\Authentication\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\Authentication\IAuthenticationResponse.ts" />
+    <TypeScriptCompile Include="src\app\shared\Authentication\User.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\AutocompleteController.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\AutocompleteDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\AutocompleteWidget.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\ClickAnywhereButHereDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\HighlightIfSameDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\IAutocompleteScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\KeyCodes.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\Suggestion.ts" />
+    <TypeScriptCompile Include="src\app\shared\AutocompleteWidget\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\CustomShapeModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\CustomShapeService.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\ISavedShape.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\IShapeListItem.ts" />
+    <TypeScriptCompile Include="src\app\shared\CustomShapes\SaveShapeModalController.ts" />
+    <TypeScriptCompile Include="src\app\shared\Environment\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\Environment\EnvironmentConfiguration.ts" />
+    <TypeScriptCompile Include="src\app\shared\Environment\EnvironmentModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\ExcelDownload\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\ExcelDownload\ExcelDownloadModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\ExcelDownload\ExcelDownloadService.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoPermissions\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoPermissions\GeoPermissionsModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoPermissions\GeoPermissionsService.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoShapeSearch\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoShapeSearch\GeoShapeSearchModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoShapeSearch\GeoShapeSearchService.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoShapeSearch\GeoShapeSearchServiceRequest.ts" />
+    <TypeScriptCompile Include="src\app\shared\GeoShapeSearch\IGeoShapeSearchServiceResponse.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\IBubbleMarkerParams.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\IQScorePinParameters.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\ITransactionPinParameters.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\ITransactionPinRow.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\MapMarker.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\MarkerIcon.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\PinFactory.ts" />
+    <TypeScriptCompile Include="src\app\shared\Mapping\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\Navbar\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\Navbar\NavbarController.ts" />
+    <TypeScriptCompile Include="src\app\shared\Navbar\NavbarDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\Navbar\NavbarModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\Navbar\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\Parcels\MapMultiPolygon.ts" />
+    <TypeScriptCompile Include="src\app\shared\Parcels\MapParcel.ts" />
+    <TypeScriptCompile Include="src\app\shared\Parcels\ParcelsModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\Parcels\ParcelsSearchService.ts" />
+    <TypeScriptCompile Include="src\app\shared\PlayersSearch\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\PlayersSearch\PlayersSearchModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\PlayersSearch\PlayersSearchService.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\IPropertyDetailRequest.d.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\IPropertyDetailResponse.d.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\IPropertyDetailScope.d.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\PropertyDetailController.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\PropertyDetailDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\PropertyDetailModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\PropertyDetail\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\CompanyFilterMenuController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\CompanyFilterMenuDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\CompanyItemController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\CompanyItemDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\ICompanyFilterMenuScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\ICompanyFilters.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\CompanyFilterMenuWidget\ICompanyItemScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\DateRangeWidget\DateRangeController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\DateRangeWidget\DateRangeDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\DateRangeWidget\IDateRangeScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeoAutocompleteWidget\GeoAutocompleteController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeoAutocompleteWidget\GeoAutocompleteDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeoAutocompleteWidget\IGeoAutocompleteScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterItemController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterItemDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\GeographyFilterSet.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\IGeographyFilterItemDescription.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\IGeographyFilterItemScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\IGeographyFilterScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\GeographyFilterWidget\IGeographyFilterSetDescription.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\IKeywordFilterMenuScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\IKeywordFilters.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\IKeywordItemScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\KeywordFilterMenuController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\KeywordFilterMenuDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\KeywordItemController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\KeywordFilterMenuWidget\KeywordItemDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PinViewsWidget\IPinViewsScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PinViewsWidget\PinViewsController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PinViewsWidget\PinViewsDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyDetailsFilterMenuWidget\IPropertyDetailsFilterMenuScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyDetailsFilterMenuWidget\PropertyDetailsFilterMenuController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyDetailsFilterMenuWidget\PropertyDetailsFilterMenuDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\IPropertyTypeFilterItemScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\IPropertyTypeFilterScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeDescriptionInterfaces.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterAggregateCounts.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterItemController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeFilterItemDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\PropertyTypeFilterWidget\PropertyTypeItems.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\TransactionFiltersModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\TransactionFiltersService.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\TransactionsFilterMenuWidget\ITransactionsFilterMenuScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\TransactionsFilterMenuWidget\TransactionsFilterMenuController.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionFilters\TransactionsFilterMenuWidget\TransactionsFilterMenuDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionHistoryChartWidget\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionHistoryChartWidget\ITransactionHistoryChartInterfaces.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionHistoryChartWidget\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionHistoryChartWidget\TransactionHistoryChartDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionHistoryChartWidget\TransactionHistoryChartWidget.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionSearch\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionSearch\TransactionSearchModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\TransactionSearch\TransactionSearchService.ts" />
+    <TypeScriptCompile Include="src\app\shared\TriStateCheckboxWidget\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\TriStateCheckboxWidget\ITriStateCheckboxScope.d.ts" />
+    <TypeScriptCompile Include="src\app\shared\TriStateCheckboxWidget\TriStateCheckboxWidget.ts" />
+    <TypeScriptCompile Include="src\app\shared\TriStateCheckboxWidget\TriStateCheckboxWidgetDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\ChangePassword.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\Constants.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\IUserPreferencesScope.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\PersonalInformation.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\Templates.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\UserPreferencesController.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\UserPreferencesDirective.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\UserPreferencesModule.ts" />
+    <TypeScriptCompile Include="src\app\shared\UserPreferences\UserPreferencesService.ts" />
+    <TypeScriptCompile Include="src\app\tsd.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-awesome-slider-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-bootstrap-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-google-maps-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-logger-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-moment.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-numeraljs-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-nvd3-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-rangeSlider-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-resource.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-simple-logger-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-translate-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\angular-translate.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\lodash.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\sprintf-js-shim.d.ts" />
+    <TypeScriptCompile Include="src\app\typings\ui-router-extras-shim.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\app\components\App.Private.Home\Home.scss" />
+    <Content Include="src\app\components\App.Private.Properties.Players\Players.scss" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49567</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49567/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,67 @@
+<div class="col-md-1 dropdown" dropdown>
+    <button style="width: 135px;" class="btn btn-default dropdown-toggle" type="button" id="geoFilterDropdown"
+            data-toggle="menu"
+            aria-haspopup="true" aria-expanded="true" dropdown-toggle>
+        {{"GEOGRAPHY" | translate}}
+        <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" style="margin-left: 10px; max-height: 400px; overflow-y: scroll;"
+         aria-labelledby="geoFilterDropdown">
+        <div ng-click="$event.stopPropagation();">
+            <div class="container" style="max-width: 500px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <tabset>
+                            <tab ng-repeat="filterSet in geogFilterCtrl.GeographyFilterSets"
+                                 heading="{{filterSet.Name}}" active="filterSet.active" ng-init="filterSet.active = $index === 0">
+                                <table width="100%">
+                                    <tr>
+                                        <td><h4>{{"THEATRE" | translate}}</h4></td>
+                                        <td><h4>{{"COUNTRY" | translate}}</h4></td>
+                                        <td><h4>{{"METRO_MARKET" | translate}}</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <div ng-repeat="theatre in filterSet.Theatres">
+                                                <geography-filter-item item="theatre"></geography-filter-item>
+                                            </div>
+                                        </td>
+                                        <td valign="top">
+                                            <div ng-repeat="country in filterSet.Countries">
+                                                <geography-filter-item item="country"></geography-filter-item>
+                                            </div>
+                                        </td>
+                                        <td valign="top">
+                                            <div ng-repeat="metroOrMarket in filterSet.MetrosAndMarkets">
+                                                <geography-filter-item item="metroOrMarket"></geography-filter-item>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </tab>
+                            <tab heading="My Shapes">
+                                <table width="100%" class="table table-striped" style="margin-bottom: 5px;">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Shape</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="shape in geogFilterCtrl.savedShapes">
+                                            <td align="left">{{$index + 1}}.</td>
+                                            <td align="left"><a ng-click="geogFilterCtrl.fetchShape(shape.id)"><label>{{shape.name}}</label></a></td>
+                                            <td align="left"><a ng-click="geogFilterCtrl.deleteShape(shape.id)" confirm="Are you sure you wish to delete shape: {{shape.name}}?" confirm-settings="{size: 'sm'}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

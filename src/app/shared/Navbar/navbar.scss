@@ -1,0 +1,225 @@
+
+//colors
+$white: #ffffff;
+$silver: #c0c0c0;
+$color_green_vogue_approx: #002b57;
+$color_celeste_approx: #cccccc;
+$color_regal_blue_approx: #003c78;
+$color_endeavour_approx: #0055ab;
+$color_mercury_approx: #e6e6e6;
+$color_congress_blue_approx: #00458a;
+$color_alto_approx: #dddddd;
+
+$mainHeaderBG: #05417C;
+
+//@extend-elements
+//original selectors
+//.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus
+%extend_1 {
+  color: $silver;
+  background-color: $mainHeaderBG;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff002b57', endColorstr='#ff00458a', GradientType=0);
+}
+
+// todo: cleanup navbar styles and colors. quick and dirty burger menu for demo. MC
+
+.utilityReference{
+  background: $mainHeaderBG;
+  border: 0px solid #F0F0F0;
+  color: #fff;
+  //margin: -41px 18px;
+  margin-top: 8px;
+  margin-right: 10px;
+  float: right;
+  text-align: center;
+  li{
+    font-family: "Roboto";font-weight: 300;}
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.utilityOverlay{
+  position: absolute;
+  width: 216px;
+  padding: 22px;
+  background-color: #FCFCFC;
+  border: 1px solid #D1D3D4;
+  top: 100px;
+  right: 0;
+  color: #02376A;
+  margin-top: -50px;
+  //font-size: 1.583em;
+  li{
+    margin-bottom: 30px;
+    img{
+      float: right;
+    }
+  }
+
+}
+.utilityOverlay li:last-child{
+  margin-bottom: 0px;
+}
+ol, ul {
+  list-style: none;
+}
+
+.navbar-custom {
+  background-color: $mainHeaderBG;
+  border-color: $mainHeaderBG;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0055ab', endColorstr='#ff003c78', GradientType=0);
+  .navbar-brand {
+    color: $white;
+    &:hover {
+      color: $color_mercury_approx;
+      background-color: transparent;
+    }
+    &:focus {
+      color: $color_mercury_approx;
+      background-color: transparent;
+    }
+  }
+  .navbar-text {
+    color: $white;
+  }
+  .navbar-toggle {
+    border-color: $color_alto_approx;
+    &:hover {
+      background-color: $color_alto_approx;
+    }
+    &:focus {
+      background-color: $color_alto_approx;
+    }
+    .icon-bar {
+      background-color: $color_celeste_approx;
+    }
+  }
+  .navbar-collapse {
+    border-color: $color_green_vogue_approx;
+  }
+  .navbar-form {
+    border-color: $color_green_vogue_approx;
+  }
+  .navbar-link {
+    color: $white;
+    &:hover {
+      color: $silver;
+    }
+  }
+  .navbar-nav > {
+    li {
+      &:last-child > a {
+        border-right: 1px solid $color_green_vogue_approx;
+      }
+      > a {
+        color: $white;
+        border-left: 1px solid $color_green_vogue_approx;
+        &:hover {
+          color: $silver;
+          background-color: transparent;
+        }
+        &:focus {
+          color: $silver;
+          background-color: transparent;
+        }
+      }
+    }
+    .active > a {
+      @extend %extend_1;
+      &:hover {
+        @extend %extend_1;
+      }
+      &:focus {
+        @extend %extend_1;
+      }
+    }
+    .disabled > a {
+      color: $color_celeste_approx;
+      background-color: transparent;
+      &:hover {
+        color: $color_celeste_approx;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $color_celeste_approx;
+        background-color: transparent;
+      }
+    }
+    .dropdown > a {
+      .caret {
+        border-top-color: $white;
+        border-bottom-color: $white;
+      }
+      &:hover .caret {
+        border-top-color: $silver;
+        border-bottom-color: $silver;
+      }
+      &:focus .caret {
+        border-top-color: $silver;
+        border-bottom-color: $silver;
+      }
+    }
+    .open > a {
+      background-color: $color_green_vogue_approx;
+      color: $silver;
+      &:hover {
+        background-color: $color_green_vogue_approx;
+        color: $silver;
+        .caret {
+          border-top-color: $silver;
+          border-bottom-color: $silver;
+        }
+      }
+      &:focus {
+        background-color: $color_green_vogue_approx;
+        color: $silver;
+        .caret {
+          border-top-color: $silver;
+          border-bottom-color: $silver;
+        }
+      }
+      .caret {
+        border-top-color: $silver;
+        border-bottom-color: $silver;
+      }
+    }
+  }
+}
+@media(max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > {
+    li > a {
+      color: $white;
+      &:hover {
+        color: $silver;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $silver;
+        background-color: transparent;
+      }
+    }
+    .active > a {
+      color: $silver;
+      background-color: $color_green_vogue_approx;
+      &:hover {
+        color: $silver;
+        background-color: $color_green_vogue_approx;
+      }
+      &:focus {
+        color: $silver;
+        background-color: $color_green_vogue_approx;
+      }
+    }
+    .disabled > a {
+      color: $color_celeste_approx;
+      background-color: transparent;
+      &:hover {
+        color: $color_celeste_approx;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $color_celeste_approx;
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="col-md-1 dropdown" dropdown>
+    <button style="width: 135px;" class="btn btn-default dropdown-toggle" type="button" id="propTypeDropdown"
+            data-toggle="menu"
+            aria-haspopup="true" aria-expanded="true" dropdown-toggle>
+        {{"PROPERTY_TYPE" | translate}}
+        <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" style="margin-left: 10px;" aria-labelledby="propTypeDropdown">
+        <div ng-click="$event.stopPropagation();">
+            <div ng-repeat="propertyType in propTypeFilterCtrl.propertyTypes">
+                <span>
+                    <input type="checkbox" ng-model="propertyType.value">{{propertyType.propertyType}}
+                    <span ng-if="propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId]">
+                        ({{propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId].count}})
+                    </span>
+                </span>
+
+                <div style="margin-left: 10px;" ng-repeat="subPropertyType in propertyType.subPropertyTypes">
+                    <span>
+                        <input type="checkbox"
+                               ng-model="subPropertyType.value">{{subPropertyType.subPropertyType}}
+                        <span ng-if="propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId].subTypes[subPropertyType.subPropertyTypeId]">
+                            ({{propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId].subTypes[subPropertyType.subPropertyTypeId]}})
+                        </span>
+                    </span>
+                </div>
+
+                <div style="margin-left: 10px;" ng-hide="propertyType.activeFeatures.length === 0">
+                    <div>Features</div>
+                    <div style="margin-left: 10px;" ng-repeat="feature in propertyType.activeFeatures">
+                        <span>
+                            <input type='checkbox'
+                                   tri-state-checkbox='feature.value'
+                                   tri-state-set-value='feature.setValue(value)'/>{{feature.feature}}
+                            <span ng-if="propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId].features[feature.featureId]">
+                                ({{propTypeFilterCtrl.propertyTypeFilterAggregations[propertyType.propertyTypeId].features[feature.featureId]}})
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

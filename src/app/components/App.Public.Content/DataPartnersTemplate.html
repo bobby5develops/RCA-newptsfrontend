@@ -1,0 +1,15 @@
+<div class="content_margin">
+    <style>
+        .bio_line{clear: both; height: 150px;}
+    </style>
+    <h1 class="centerColumn-title">
+        Data Partners</h1>
+
+    <div ng-repeat="datapartner in dataPartnersCtrl.DataPartners">
+        <div class="bio_line">
+        <a href="http://{{datapartner.href}}" class="icon_rarrow" rel="nofollow" target="_blank">{{datapartner.partner}}</a></h5>
+        <a href="http://{{datapartner.href}}" rel="nofollow" target="_blank"><img src="https://www.rcanalytics.com/images/dp/{{datapartner.img_src}}" alt="{{datapartner.partner}}" style="float: right; border: 0px; padding: 27px;"></a>
+        <p class="acp">{{datapartner.text}}</p>
+        </div>
+    </div>
+</div>

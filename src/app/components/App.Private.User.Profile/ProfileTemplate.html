@@ -1,0 +1,318 @@
+<div class="container">
+    <!-- TODO Add Translate/i18n -->
+    <!-- TODO Add ngMessages for validation -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Personal Information:</h4>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <form name="personalForm" class="form-horizontal" novalidate
+                          ng-submit="personalForm.$valid && profileCtrl.UpdatePersonal()">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Email</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static">{{profileCtrl.PersonalInformation.email}}</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Name</label>
+
+                            <div class="col-sm-6">
+                                <p class="form-control-static">
+                                    {{profileCtrl.PersonalInformation.firstName}} {{profileCtrl.PersonalInformation.lastName}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress" class="col-sm-3 control-label">Address</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Address"
+                                       name="address" ng-model="profileCtrl.PersonalInformation.address" required="">
+                            </div>
+                            <div class="col-sm-3" ng-show="personalForm.$submitted || personalForm.address.$touched">
+                                <div class="form-control-static text-danger" ng-show="personalForm.address.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Enter an Address
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="countrySelection" class="col-sm-3 control-label">Country</label>
+
+                            <div class="col-sm-6">
+                                <select id="countrySelection" name="country" ng-change="profileCtrl.ChangeStateProvidenceList()"
+                                        ng-options="country.name as country.name for country in profileCtrl.Countries"
+                                        ng-model="profileCtrl.PersonalInformation.country"
+                                        class="form-control" required="">
+                                    <option value="">Select a Country</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3" ng-show="personalForm.$submitted || personalForm.country.$touched">
+                                <div class="form-control-static text-danger" ng-show="personalForm.country.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Select a Country
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectState" class="col-sm-3 control-label">State</label>
+
+                            <div class="col-sm-6">
+                                <select id="selectState" name="state" ng-disabled="profileCtrl.States === null"
+                                        ng-options="state.name as state.name for state in profileCtrl.States"
+                                        ng-model="profileCtrl.PersonalInformation.state"
+                                        class="form-control" ng-required="profileCtrl.IsStateRequired">
+                                    <option value="">Select a State</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3" ng-show="personalForm.$submitted || personalForm.state.$touched">
+                                <div class="form-control-static text-danger" ng-show="personalForm.state.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Select a State/Providence
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputCity" class="col-sm-3 control-label">City</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="inputCity" placeholder="City"
+                                       name="city" ng-model="profileCtrl.PersonalInformation.city" required="">
+                            </div>
+                            <div class="col-sm-3" ng-show="personalForm.$submitted || personalForm.city.$touched">
+                                <div class="form-control-static text-danger" ng-show="personalForm.city.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Enter a City
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">
+                                    Update Information
+                                </button>
+                                <span class="form-control-static" ng-show="profileCtrl.PersonalResults">
+                                    <span class="text-success" ng-if="profileCtrl.PersonalResults.success">
+                                        &nbsp;Information Updated!
+                                    </span>
+                                    <span class="text-danger" ng-if="!profileCtrl.PersonalResults.success">
+                                        &nbsp;Unable to Update Information at this Time
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Change Password:</h4>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <form name="changeForm" class="form-horizontal" novalidate
+                          ng-submit="changeForm.$valid && profileCtrl.UpdatePassword()">
+                        <div class="form-group">
+                            <label for="inputCurrentPassword" class="col-sm-3 control-label">Current Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputCurrentPassword"
+                                       name="oldPassword" placeholder="Current Password"
+                                       ng-model="profileCtrl.ChangePassword.oldPassword" required="">
+                            </div>
+                            <div class="col-sm-3" ng-show="changeForm.$submitted || changeForm.oldPassword.$touched">
+                                <div class="form-control-static text-danger" ng-if="changeForm.oldPassword.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Enter Old Password
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputNewPassword" class="col-sm-3 control-label">New Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputNewPassword"
+                                       name="newPassword" placeholder="New Password"
+                                       ng-model="profileCtrl.ChangePassword.newPassword"
+                                       ng-minlength="6" maxlength="50" required="">
+                            </div>
+                            <div class="col-sm-3" ng-show="changeForm.$submitted || changeForm.newPassword.$touched">
+                                <div class="form-control-static text-danger" ng-if="changeForm.newPassword.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Enter a New Password
+                                </div>
+                                <div class="form-control-static text-danger" ng-if="changeForm.newPassword.$error.minlength">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Must be at least 6 Characters
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputNewPasswordConfirm" class="col-sm-3 control-label">Confirm New Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputNewPasswordConfirm"
+                                       name="changePassword" placeholder="Confirm New Password"
+                                       ng-model="profileCtrl.ChangePassword.confirmPassword"
+                                       compare-to="profileCtrl.ChangePassword.newPassword" required="">
+                            </div>
+                            <div class="col-sm-3" ng-show="changeForm.$submitted || changeForm.changePassword.$touched">
+                                <div class="form-control-static text-danger" ng-if="changeForm.changePassword.$error.required">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Please Confirm New Password
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary" ng-disabled="changeForm.$invalid">
+                                    Update Password
+                                </button>
+                                <span class="form-control-static" ng-show="profileCtrl.ChangePasswordResults">
+                                    <span class="text-success" ng-if="profileCtrl.ChangePasswordResults.success">
+                                        &nbsp;Password Updated!
+                                    </span>
+                                    <span class="text-danger" ng-if="!profileCtrl.ChangePasswordResults.success">
+                                        &nbsp;Incorrect Old Password
+                                    </span>
+                                </span>
+                                <!-- TODO consider ui-validate for client password confirm -->
+                                <span class="form-control-static" ng-show="profileCtrl.ConfirmFailure">
+                                    <span class="text-danger">
+                                        &nbsp;Confirm Password Does not Match New Password!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Data Integration Security:</h4>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <form name="changeDIForm" class="form-horizontal" novalidate
+                          ng-submit="changeDIForm.$valid">
+                        <div class="form-group">
+                            <label for="inputCurrentDIPassword" class="col-sm-3 control-label">Current DI Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputCurrentDIPassword"
+                                       name="oldPassword" placeholder="Current Password"
+                                       required="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputNewDIPassword" class="col-sm-3 control-label">New DI Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputNewDIPassword"
+                                       name="newPassword" placeholder="New Password"
+                                       ng-minlength="6" maxlength="50" required="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputNewDIPasswordConfirm" class="col-sm-3 control-label">Confirm New DI Password</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputNewDIPasswordConfirm"
+                                       name="changePassword" placeholder="Confirm New Password"
+                                       required="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputCurrentDIAPIKey" class="col-sm-3 control-label">Current DI API Key</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputCurrentDIAPIKey"
+                                       name="changePassword" placeholder="Current DI API Key"
+                                       required="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary" disabled>
+                                    Update DI Password
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Preferences*:</h4>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <user-preferences></user-preferences>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <small class="pull-right"><i>*Preferences are automatically saved upon selection</i></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Permissions:</h4>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span>
+                        Permissions Status:
+                        <span class="label label-{{profileCtrl.MapStatus.type}}">{{profileCtrl.MapStatus.status}}</span>
+                    </span>
+                    <div class="pull-right">
+                        <button class="btn btn-primary btn-sm" ng-click="profileCtrl.LoadPermissions()">Display Permissions</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ui-gmap-google-map center="profileCtrl.Map.center"
+                                                zoom="profileCtrl.Map.zoom"
+                                                control="profileCtrl.Control">
+                            </ui-gmap-google-map>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

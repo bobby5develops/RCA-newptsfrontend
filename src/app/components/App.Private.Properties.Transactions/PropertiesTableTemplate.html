@@ -1,0 +1,85 @@
+<table class="table" ng-class="{'table-striped': !pinTableCtrl.preview, 'table-hover': !pinTableCtrl.preview}" style="font-size: smaller">
+    <thead ng-if="!pinTableCtrl.preview">
+    <tr>
+        <!-- TODO we may want to change this to use multi-row TH rather than divs. -->
+        <!-- Especially if there's 3rd party sorting/directive support -->
+        <th></th>
+        <th class="text-center">
+            <div>SF</div>
+            <div>{{"YEAR_BUILT_ABBR" | translate}}/{{"RENOVATED_ABBR" | translate}}</div>
+            <div>{{"NUM_BUILDINGS_FLOORS" | translate}}</div>
+        </th>
+        <th class="text-left">
+            <div>{{"PROPERTY_NAME" | translate}}</div>
+            <div>{{"ADDRESS" | translate}}</div>
+            <div>{{"CITY" | translate}},{{"STATE" | translate}}/{{"COUNTRY" | translate}}</div>
+        </th>
+        <th class="text-center">
+            <div>Units</div>
+            <div></div>
+            <div></div>
+        </th>
+        <th>
+            <div>{{"PRICE_IN_MILLIONS_ABBR" | translate}}</div>
+            <div>{{pinTableCtrl.currency.symbol}}/{{pinTableCtrl.measurement.symbol | translate}}</div>
+            <div>{{"CAP_RATE" | translate}}</div>
+        </th>
+        <th ng-if="pinTableCtrl.full" class="text-left">
+            <div><img src="/assets/images/bsb/icon_owner.gif"> {{"OWNER" | translate}} <img src="/assets/images/bsb/icon_broker.gif"> {{"BUYER_BROKER" | translate}}</div>
+            <div><img src="/assets/images/bsb/icon_seller.gif"> {{"SELLER" | translate}} <img src="/assets/images/bsb/icon_broker_seller.gif"> {{"BROKER" | translate}}</div>
+            <div><img src="/assets/images/bsb/icon_lender.gif"> {{"LENDER_LOAN_AMT" | translate}}</div>
+        </th>
+        <th ng-if="pinTableCtrl.full" class="text-left">
+            <br/><br/>{{"COMMENTS" | translate}}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="result in pinTableCtrl.model" ng-click="pinTableCtrl.selected({record: result})">
+        <td ng-if="!pinTableCtrl.preview">
+            <div>&nbsp;</div>
+            <a ui-sref="app.private.propertyDetail({
+            propertyId: result.PropertyId,
+            dealId: result.DealId,
+            propertyKeyId: result.PropertyKeyId,
+            currencyId: pinTableCtrl.currency.id,
+            measurementId: pinTableCtrl.measurement.id})" target="_blank">
+                <span class="glyphicon glyphicon-search"
+                      ng-click="pinTableCtrl.selected({record: result})"
+                      style="cursor: pointer;"></span>
+            </a>
+        </td>
+        <td class="text-center" style="width: 125px">
+            <div><b>{{::result.TransactionType}}</b></div>
+            <div>{{::result.StatusDate | date:'mediumDate'}}</div>
+            <div><b>{{::result.PropertyType}}</b></div>
+        </td>
+        <td class="text-left" style="width: 200px">
+            <div>{{::result.PropertyName}}</div>
+            <div>{{::result.Address}}</div>
+            <div>{{::result.City}},&nbsp;{{::result.StateProv}}/&nbsp;{{::result.Country}}</div>
+        </td>
+        <td class="text-center">
+            <div>{{::result.Units | number:1}}</div>
+            <div>{{::result.YearBuilt}}</div>
+            <div>
+                {{::pinTableCtrl.buildingsAndFloors(result.NumberBuildings, result.NumberFloors)}}
+            </div>
+        </td>
+        <td>
+            <div>{{::result.StatusPrice | currency:result.CurrencySymbol:0}}</div>
+            <div>{{::result.StatusPricePerUnit | currency:result.CurrencySymbol:0}}/{{::result.MeasurementSymbol}}</div>
+            <div ng-if="result.StatusCapRateQualifier">
+                {{::(result.StatusCapRate * 100| number :1)}}% <i style="color: grey">{{::result.StatusCapRateQualifier}}</i>
+            </div>
+        </td>
+        <td ng-if="pinTableCtrl.full" class="text-left" style="width: 350px"
+            ng-bind-html="::pinTableCtrl.adaptBSBString(result.BuyerSellerBrokerString)">
+        </td>
+        <td ng-if="pinTableCtrl.full" class="text-left" style="width: 350px"
+            ng-bind-html="::pinTableCtrl.adaptComments(result.PropertyComments, result.DealComments)">
+        </td>
+    </tr>
+
+    </tbody>
+</table>

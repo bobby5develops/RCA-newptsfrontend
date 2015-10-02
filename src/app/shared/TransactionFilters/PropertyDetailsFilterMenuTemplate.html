@@ -1,0 +1,104 @@
+<div class="col-md-1" dropdown>
+    <button style="width: 135px;" class="btn btn-default dropdown-toggle" type="button" id="propDetailDropDown" data-toggle="menu"
+            aria-haspopup="true" aria-expanded="true" dropdown-toggle>
+        <!--{{"PROP_CHARS" | translate}}-->
+        Property<br/>Characteristics
+        <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-menu" style="margin-left: 10px;" aria-labelledby="propDetailDropDown">
+        <div ng-click="$event.stopPropagation();">
+            <div class="container" style="max-width: 300px;">
+                <div class="row">
+                    <span class="col-md-12">Year Built </span>
+                </div>
+                <div class="row">
+                    <span class="col-md-2">Min: </span><input style="max-width: 80px" class="col-md-4" type="number"
+                                                              ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.YearBuiltMin">
+                    <span class="col-md-2">Max: </span><input style="max-width: 80px" type="number"
+                                                              ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.YearBuiltMax"
+                                                              class="col-md-4">
+                </div><br/>
+                <div class="row">
+                    <span class="col-md-12">Number of Units </span>
+                </div>
+                <div class="row">
+                    <span class="col-md-2">Min: </span><input style="max-width: 80px" class="col-md-4" type="number"
+                                                              ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.UnitsMin">
+                    <span class="col-md-2">Max: </span><input style="max-width: 80px" type="number"
+                                                              ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.UnitsMax"
+                                                              class="col-md-4">
+                </div><br/>
+                <div class="row">
+                    <span class="col-md-5">Tenant Name</span><span class="col-md-7"><input type="text" ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.TenantName"></span>
+                </div><br/>
+                <div class="row">
+                    <span class="col-md-5">RCA Property ID</span><span class="col-md-7"><input type="text" ng-model="propDetailsFilterMenuCtrl.PropertyDetailsFilter.PropertyId"></span>
+                </div><br/>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        Q Score
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px;">
+                    <div class="col-md-12">
+                        <input ng-model="propDetailsFilterMenuCtrl.SliderValueRange"  type="text" id="mySlider1" slider options="propDetailsFilterMenuCtrl.SliderOptions" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" id="CondoInterest"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.CondoInterest"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'CondoInterest')">
+                                    Condo Int/Strata
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="LeaseHold"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.LeaseHold"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'LeaseHold')">
+                                    Leasehold
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Redevelop"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.Redevelop"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'Redevelop')">
+                                    Redevelop
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="SingleTenant"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.SingleTenant"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'SingleTenant')">
+                                    Single Tenant
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="StreetRetail"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.StreetRetail"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'StreetRetail')">
+                                    Street Retail
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Vacant"
+                                           tri-state-checkbox="propDetailsFilterMenuCtrl.PropertyDetailsFilter.Vacant"
+                                           tri-state-set-value="propDetailsFilterMenuCtrl.SetFilterItemValue(value, 'Vacant')">
+                                    Vacant
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="content_margin">
+    <style>
+        .bio_image {
+            margin-left: 6px;
+            float: left;
+            margin-top: 20px;
+            height: 55px;
+            line-height: 16px;
+        }
+        .bio_who {
+            margin-left: 6px;
+            float: left;
+            margin-top: 20px;
+            height: 55px;
+            line-height: 16px;
+        }
+        .bio_line{clear: both; height: 150px;}
+    </style>
+    <h1 class="centerColumn-title">
+        Our Leadership</h1>
+    <p style="font-size: 12px;">
+        The RCA team is a multi-discipline group with expertise in research, data analysis and delivery. We share an interest in commercial real estate and providing world-class customer service.</p>
+
+    <div ng-repeat="leader in leadershipCtrl.leaders">
+        <div class="bio_line">
+            <span class="bio_image">
+                <a  ui-sref="app.public.leadershipItem({leadershipItem: leader.id_tx})" title="{{leader.name_tx}} - {{leader.title_tx}}" class="leadership_img"><img src="https://www.rcanalytics.com/images/photos/{{leader.imageSrc_tx}}" width="85" height="126" alt="{{leader.name_tx}} - {{leader.title_tx}}"></a>
+            </span>
+            <span class="bio_who">
+                <br>
+                <a  ui-sref="app.public.leadershipItem({leadershipItem: leader.id_tx})" title="{{leader.name_tx}} - {{leader.title_tx}}">{{leader.name_tx}}<span ng-if="leader.suffixes_tx.length">, {{leader.suffixes_tx}}</span></a>
+                <br>{{leader.title_tx}}
+            </span>
+        </div>
+    </div>
+</div>

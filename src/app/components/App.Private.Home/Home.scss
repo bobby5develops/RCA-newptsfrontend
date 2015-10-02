@@ -1,0 +1,61 @@
+$color-navy: #053971;
+
+@mixin product-circle($url, $width, $height) {
+  display: block;
+  text-indent: -9999px;
+  width: $width;
+  height: $height;
+  background: url($url);
+  background-size: $width $height;
+  margin: 0 auto;
+}
+
+.welcome-jumbotron {
+  margin-top: 75px;
+  text-align: center;
+  font-size: 2em;
+  color: $color-navy;
+
+  > div {
+    text-transform: uppercase;
+    font-size: 2em;
+
+    > .real {
+      font-weight: 700;
+
+      > .orange {
+        color: #D75414;
+        font-weight: 700;
+      }
+
+    }
+  }
+
+}
+
+.product-container {
+  margin-bottom: 5px;
+
+  .product-name {
+    text-align: center;
+    margin: 5px 0 15px 0;
+    color: $color-navy;
+    font-size: 2em;
+  }
+
+  .product-circle-properties {
+    @include product-circle('components/App.Private.Home/images/iconProperties.svg', 244px, 246px);
+  }
+
+  .product-circle-investor {
+    @include product-circle('components/App.Private.Home/images/iconInvestors.svg', 244px, 246px);
+  }
+
+  .product-circle-capflows {
+    @include product-circle('components/App.Private.Home/images/iconCapFlows.svg', 244px, 246px);
+  }
+
+  .product-circle-trends {
+    @include product-circle('components/App.Private.Home/images/iconTrends.svg', 244px, 246px);
+  }
+}

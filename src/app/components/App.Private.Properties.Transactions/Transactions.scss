@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+.angular-google-map-container, .angular-google-map {
+  /*flex: 1;*/
+  /*display: flex;*/
+  height: 500px;
+}
+
+/*[layout] {*/
+/*box-sizing: border-box;*/
+/*display: -webkit-box;*/
+/*display: -webkit-flex;*/
+/*display: -moz-box;*/
+/*display: -moz-flex;*/
+/*display: -ms-flexbox;*/
+/*display: flex;*/
+/*}*/
+
+/*[layout=column] {*/
+/*flex-direction: column;*/
+/*}*/
+
+/*[layout=row] {*/
+/*flex-direction: row;*/
+/*}*/
+
+/*[flex] {*/
+/*flex: 1;*/
+/*}*/
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.drawerToFront {
+  z-index: 1000;
+  overflow-x: visible;
+}
+
+.drawerToBack {
+  z-index: 1;
+  overflow: auto;
+}
+
+.sidebar {
+  /*position: fixed;*/
+  /*top: 51px;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*z-index: 1000;*/
+  /*display: block;*/
+  /*padding: 20px;*/
+  /*overflow-x: hidden;*/
+  /*overflow-y: auto; /!* Scrollable contents if viewport is shorter than content. *!/*/
+  margin-top: -20px;
+  padding-left: 0;
+  min-height: 1000px;
+  background-color: rgb(18, 86, 154);
+  border-right: 1px solid #eee;
+}
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: 10px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  /*margin-left: -20px;*/
+}
+
+ .legend {
+   background: white;
+   padding: 10px;
+   border: solid thin black;
+ }
+
+ .bottomRight {
+  right: 1px!important;
+  bottom: 7px!important;
+ }

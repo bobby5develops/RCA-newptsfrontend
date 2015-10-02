@@ -1,0 +1,61 @@
+<table class="playerTable" style="width: 100%;">
+    <thead class="playerHead">
+    <tr>
+        <th></th>
+        <th></th>
+        <th colspan="2" style="color: white;">AS SELLER REP</th>
+        <th colspan="2" style="color: white;">AS BUYER REP</th>
+        <th colspan="2" style="color: white;">TOTAL</th>
+    </tr>
+    <tr>
+        <th style="width: 5%;"> <a ng-click="brokerCtrl.orderBy('TotalPropertiesCount')">Rank
+            <!--<span class="sortorder" ng-show="brokerCtrl.SortField === 'NumberOfProperties'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>-->
+        </a>
+        </th>
+        <th style="width: 20%;"> <a ng-click="brokerCtrl.orderBy('CompanyName')">Broker
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'CompanyName'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"> <a ng-click="brokerCtrl.orderBy('DispositionsVolume')"><br/>Vol in mil.
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'DispositionsVolume'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 10%;"> <a ng-click="brokerCtrl.orderBy('DispositionsPropertiesCount')"><br/># Props
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'DispositionsPropertiesCount'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"> <a ng-click="brokerCtrl.orderBy('AcquisitionsVolume')"><br/>Vol in mil.
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'AcquisitionsVolume'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 10%;"> <a ng-click="brokerCtrl.orderBy('AcquisitionsPropertiesCount')"><br/># Props
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'AcquisitionsPropertiesCount'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 15%;"> <a ng-click="brokerCtrl.orderBy('TotalVolume')"><br/>Vol in mil.
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'TotalVolume'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+        <th style="width: 10%;"> <a ng-click="brokerCtrl.orderBy('TotalPropertiesCount')"><br/># Props
+            <span class="sortorder" ng-show="brokerCtrl.SortField === 'TotalPropertiesCount'" ng-class="{reverse:brokerCtrl.ReverseSortFlag}"></span>
+        </a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="broker in brokerCtrl.Brokers | orderBy:brokerCtrl.SortField:brokerCtrl.ReverseSortFlag" ng-class-even="'even'">
+        <td align="center">{{$index + 1}}</td>
+        <td>{{::broker.CompanyName}}</td>
+
+        <td align="right">{{::broker.DispositionsVolume / 1000000 | currency:brokerCtrl.CurrencySymbol:1}}</td>
+        <td align="center">{{::broker.DispositionsPropertiesCount}}</td>
+
+        <td align="right">{{::broker.AcquisitionsVolume / 1000000 | currency:brokerCtrl.CurrencySymbol:1}}</td>
+        <td align="center">{{::broker.AcquisitionsPropertiesCount}}</td>
+
+        <td align="right">{{::broker.TotalVolume / 1000000 | currency:brokerCtrl.CurrencySymbol:1}}</td>
+        <td align="center">{{::broker.TotalPropertiesCount}}</td>
+
+    </tr>
+    </tbody>
+</table>

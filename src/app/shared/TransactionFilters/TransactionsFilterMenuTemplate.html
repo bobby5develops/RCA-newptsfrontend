@@ -1,0 +1,104 @@
+<div class="col-md-1" dropdown>
+  <button style="width: 135px;" class="btn btn-default dropdown-toggle" type="button" id="transFilterDropdown" data-toggle="menu"
+          aria-haspopup="true" aria-expanded="true" dropdown-toggle>
+    <!--{{"TRANS_DETAILS" | translate}}-->
+    Transaction<br/>Details
+    <span class="caret"></span>
+  </button>
+
+  <div class="dropdown-menu" style="margin-left: 10px;" aria-labelledby="transFilterDropdown">
+    <div ng-click="$event.stopPropagation();">
+      <div class="container" style="max-width: 300px;">
+        <div class="row">
+          <div class="col-md-12">
+            Price in mil ($):
+          </div>
+        </div>
+        <div class="row">
+          <span class="col-md-2">Min: </span><input style="max-width: 80px" class="col-md-4" type="number"
+                                                    ng-model="transFilterMenuCtrl.TransactionSearchFilters.MinPrice">
+          <span class="col-md-2">Max: </span><input style="max-width: 80px" type="number" ng-model="transFilterMenuCtrl.TransactionSearchFilters.MaxPrice"
+                                                    class="col-md-4">
+        </div>
+        <br/>
+
+        <div class="row">
+          <div class="col-md-12">
+            PPU ($/Units):
+          </div>
+        </div>
+        <div class="row">
+          <span class="col-md-2">Min: </span><input style="max-width: 80px" class="col-md-4" type="number"
+                                                    ng-model="transFilterMenuCtrl.TransactionSearchFilters.MinPPU">
+          <span class="col-md-2">Max: </span><input style="max-width: 80px" type="number" ng-model="transFilterMenuCtrl.TransactionSearchFilters.MaxPPU"
+                                                    class="col-md-4">
+        </div>
+        <br/>
+
+        <div class="row">
+          <div class="col-md-12">
+            Transaction Date:<br/>
+            <date-range-filter date-range="transFilterMenuCtrl.TransactionSearchFilters.DateRange"></date-range-filter>
+          </div>
+        </div>
+        <br/>
+
+        <div class="row">
+          <div class="col-md-12">
+            <table>
+              <tr>
+                <td><input type="checkbox" id="condoConversions"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.CondoConversions"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'CondoConversions')">
+                  Condo Conversions
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="pendingTransactions"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.PendingTransactions"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'PendingTransactions')">
+                  Pending Transactions
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="leasebacks"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.Leasebacks"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'Leasebacks')"> Leasebacks
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="partialInterest"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.PartialInterest"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'PartialInterest')">
+                  Partial Interest
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="minorityInterest"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.MinorityInterest"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'MinorityInterest')">
+                  Minority Interest
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="jointVenture"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.JointVenture"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'JointVenture')"> Joint
+                  Venture/OBO
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="entityLevel"
+                           tri-state-checkbox="transFilterMenuCtrl.TransactionSearchFilters.EntityLevel"
+                           tri-state-set-value="transFilterMenuCtrl.SetFilterItemValue(value, 'EntityLevel')"> Entity
+                  Level
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+    <autocomplete flip-enabled="true"
+                  is-disabled="false"
+                  ng-model="geoAutoCtrl.searchText"
+                  suggestions="geoAutoCtrl.suggestions"
+                  on-keydown="geoAutoCtrl.fetchSuggestions(searchText)"
+                  on-select="geoAutoCtrl.setSelected(suggestion)"
+                  on-empty="geoAutoCtrl.clearText()"
+                  keydown-delay="250"
+                  clear-suggestions-on-exit="true"></autocomplete>
+</div>

@@ -1,0 +1,32 @@
+<div class="rcaautocomplete input" style="width: 100%;"
+     ng-mouseenter="autocompCtrl.onMouseEnter()"
+     ng-mouseleave="autocompCtrl.onMouseLeave()"
+     click-anywhere-but-here="autocompCtrl.onBlur"
+     click-anywhere-but-here-enabled="{{autocompCtrl.hasFocus}}">
+
+    <input style="width: inherit;" type="text" placeholder="Begin typing an address, market, country, etc."
+           ng-model="searchText"
+           ng-keydown="autocompCtrl.onKeydown($event)"
+           ng-focus="autocompCtrl.onFocus()"
+           ng-trim="false">
+
+    <span class="searchclear glyphicon glyphicon-remove-circle" ng-click="onEmpty();"
+          ng-if="autocompCtrl.shouldDisplayEmptyButton"></span>
+
+    <ul ng-class="{'flip': greaterThanThreshold}" ng-if="autocompCtrl.completing && suggestions.length > 0"
+        click-anywhere-but-here="autocompCtrl.exit"
+        click-anywhere-but-here-enabled="{{autocompCtrl.completing}}">
+        <li
+                highlight-if-same
+                ng-repeat="suggestion in suggestions track by $index"
+                index="{{ $index }}"
+                container="{ watchText: suggestion.displayText, highlightText: searchText }"
+                title="{{suggestion.displayText}}"
+                ng-bind="suggestion.displayText"
+                ng-class="{ 'hover' : $index == autocompCtrl.selectedIndex }"
+                ng-click="autocompCtrl.selectSuggestion(suggestion)">
+        </li>
+    </ul>
+</div>
+
+

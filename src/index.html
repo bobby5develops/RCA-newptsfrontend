@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="newPtsfrontend" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      RCA Commercial Real Estate Sales Trends & Market Research
+    </title>
+
+    <meta property="og:title" content="Real Capital Analytics" />
+    <meta property="og:url" content="http://wwww.rcanalytics.com/" />
+    <meta property="og:description" content="Whether you’re planning an investment strategy, monitoring risk, evaluating and negotiating a deal or prospecting for the next opportunity, RCA’s transactions, trends, and tools provide a unique, competitive edge. Find out how RCA can help strengthen your data and streamline your work load." />
+    <meta property="og:image" content="https://www.rcanalytics.com/Default/ui/Banner.png" />
+    <meta property="og:type" content="website" />
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css styles/vendor.css-->
+    <link rel="stylesheet" href="app/vendor.css">
+    <!-- endbuild -->
+    <!-- build:css styles/index.css-->
+    <link rel="stylesheet" href="app/index.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <ui-view></ui-view>
+
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-140416-1');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js-->
+    <script src="app/vendor.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/application.js-->
+    <script src="app/application.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

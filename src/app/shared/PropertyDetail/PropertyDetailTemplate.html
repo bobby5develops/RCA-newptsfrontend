@@ -1,0 +1,160 @@
+<div id="propertyDetail" class="propBox" style="font-size: 12px; padding-top: 15px; overflow-x: hidden">
+  <div class="row rowPadding" id="basicInfo" style="overflow: auto;">
+    <div class="col-md-2" id="location" style="height: inherit">
+      <div id="propName"><h4 style="color: #000066;">{{propDetail.prop.propertyName_tx}}</h4></div>
+      <div id="address"><label>{{propDetail.prop.addressStd_tx}}</label></div>
+      <div id="cityStateCountry"><label>{{propDetail.prop.city_tx}},&nbsp;{{propDetail.prop.stateProv_tx}}/&nbsp;{{propDetail.prop.country_tx}}</label></div>
+    </div>
+    <div class="col-md-2" id="buildingInfo" style="height: inherit;">
+      <div id="propType"><label>Property Type: {{propDetail.prop.propertyType_tx}}</label></div>
+      <div id="subType"><label>Subtype: {{propDetail.prop.propertySubType_tx}}</label></div>
+      <div id="bldngs"><label>Buildings: {{propDetail.prop.buildings_tx}}</label></div>
+      <div id="area"><label>Area/Units: {{propDetail.prop.units_dbl | numeraljs: '0,0'}}</label></div>
+      <div id="interest"><label>Interest: {{propDetail.prop.interestConveyed_tx}}</label></div>
+      <div id="parking"><label>Parking: {{propDetail.prop.parking_tx}}</label></div>
+    </div>
+    <div class="col-md-2" id="owner" style="height: inherit;">
+      <div id="currentOwner"><label>Current Owner: {{propDetail.currentOwner.principal_tx}}</label></div>
+      <div id="ownerAddress"><label>{{propDetail.currentOwner.principalAddress_tx}}</label></div>
+      <div id="ownerCityState"><label>{{propDetail.currentOwner.principalCity_tx}},
+        {{propDetail.currentOwner.principalStateProv_tx}}/
+        {{propDetail.currentOwner.principalCountry_tx}}</label>
+      </div>
+      <!--<div id="ownerTime"><label>Held for:{{propDetail.currentOwner.yearsOwned_nb && propDetail.currentOwner.yearsOwned_nb + ' years' }}</label></div>-->
+      <div id="capitalGroup"><label>Capital Group: {{propDetail.currentOwner.investorGroup_tx}}</label></div>
+      <!--<div id="currentHoldings"><label>Known Holdings: {{propDetail.currentOwner.knownHoldings_nb | numeraljs: '$0,0$'}}</label></div>-->
+      <!--<div id="holdingsValue"><label>Estimated Holdings Value: {{propDetail.currentOwner.knownHoldingsValue_nb | numeraljs: '$0,0'}}</label></div>-->
+    </div>
+    <div class="col-md-2" id="tenants" style="height: inherit;">
+      <table class="table table-striped" style="border-top: solid thin;">
+        <thead>
+        <tr>
+          <th>Tenants</th>
+          <th>Expires</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="tenant in propDetail.tenants">
+          <td>{{tenant.tenant_tx}}</td>
+          <td>{{tenant.leaseExpires_dt}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--<div class="col-md-2" id="price" style="height: inherit;">-->
+      <!--<div id="lastPrice"><label>Last Known Price: {{propDetail.prop.lastKnownPrice | numeraljs: '$0,0'}}</label></div>-->
+      <!--<div id="currValue"><label>Est Current Value: {{propDetail.prop.currentValue | numeraljs: '$0,0'}}</label></div>-->
+      <!--<div id="estType"><label>Est Type: Index From Known Value</label></div>-->
+    <!--</div>-->
+    <div class="col-md-2 text-center" id="findComps" style="height: inherit;">
+      <button id="findCompsButton" class="btn-default btn">Find Comps</button>
+    </div>
+  </div>
+  <hr/>
+  <div class="row rowPadding" id="transactions">
+    <div class="col-md-6" id="currentTransaction">
+      <div class="row">
+        <div class="col-md-8" id="playerInfo">
+          <table class="table">
+            <tr ng-if="propDetail.propertyPlayers.B.length > 0">
+              <td><strong>
+                <ng-pluralize count="propDetail.propertyPlayers.B.length"
+                              when="{'one': 'Buyer:', 'other': 'Buyers:'}">
+                </ng-pluralize>
+              </strong></td>
+              <td>
+                <div ng-repeat="buyer in propDetail.propertyPlayers.B">
+                  {{buyer.principal_tx}}
+                </div>
+              </td>
+            </tr>
+            <tr ng-if="propDetail.propertyPlayers.S.length > 0">
+              <td><strong> <ng-pluralize count="propDetail.propertyPlayers.S.length"
+                                         when="{'1': 'Seller:', 'other': 'Sellers:'}">
+              </ng-pluralize></strong></td>
+              <td>
+                <div ng-repeat="seller in propDetail.propertyPlayers.S">
+                  {{seller.principal_tx}}
+                </div>
+              </td>
+            </tr>
+            <tr ng-if="propDetail.propertyPlayers.BB.length > 0">
+              <td><strong> <ng-pluralize count="propDetail.propertyPlayers.BB.length"
+                                         when="{'1': 'Buyer\'s Broker:', 'other': 'Buyer\'s Brokers:'}">
+              </ng-pluralize></strong></td>
+              <td>
+                <div ng-repeat="buyerBroker in propDetail.propertyPlayers.BB">
+                  {{buyerBroker.principal_tx}}
+                </div>
+              </td>
+            </tr>
+            <tr ng-if="propDetail.propertyPlayers.SB.length > 0">
+              <td><strong> <ng-pluralize count="propDetail.propertyPlayers.SB.length"
+                                         when="{'1': 'Seller\'s Broker:', 'other': 'Seller\'s Brokers:'}">
+              </ng-pluralize></strong></td>
+              <td>
+                <div ng-repeat="sellerBroker in propDetail.propertyPlayers.SB">
+                  {{sellerBroker.principal_tx}}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Status:</strong>
+              </td>
+              <td>({{propDetail.prop.status_tx}}) {{propDetail.prop.statusDate}}</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Price: </strong>
+              </td>
+              <td>
+                {{propDetail.prop.statusPriceUSD_amt | numeraljs: '$0,0' }} ({{propDetail.prop.closePriceQualifier_tx}})
+              </td>
+            </tr>
+            <tr ng-if="propDetail.prop.closeCapRate_dbl > 0">
+              <td>
+                <strong>Cap Rate:</strong>
+              </td>
+              <td>{{propDetail.prop.closeCapRate_dbl | numeraljs: '0.00%'}}</td>
+            </tr>
+            <tr ng-if="propDetail.prop.propertyComments_tx">
+              <td>
+                <strong>Comments:</strong>
+              </td>
+              <td>{{propDetail.prop.propertyComments_tx}}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4" id="capitalStack">
+          <h6 class="text-center">Capital Stack</h6>
+          <!-- todo: static image until real data/D3 next sprint-->
+          <img src="../testdata/sampleCapStack.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 verticalLine" id="transChart">
+      <lolli-line-chart data="propDetail.transHistoryChartData"
+                           options="propDetail.transHistoryChartOptions">
+      </lolli-line-chart>
+    </div>
+  </div>
+  <hr/>
+  <div class="row rowPadding" style="padding-bottom: 20px;" id="maps">
+    <div class="col-md-6" id="satelliteView">
+      <ui-gmap-google-map center="propDetail.satMap.center"
+                          zoom="propDetail.satMap.zoom"
+                          options="propDetail.satMap.options">
+        <ui-gmap-markers models="propDetail.marker" coords="'self'" icon="'icon'">
+
+        </ui-gmap-markers>
+      </ui-gmap-google-map>
+    </div>
+
+    <div class="col-md-6 verticalLine" id="streetView">
+      <ui-gmap-street-view-panorama focalcoord="propDetail.marker[0]" radius="75" style="height:500px;">
+
+      </ui-gmap-street-view-panorama>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+@import "stylesheets/pages/_propertydetails";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+.centerColumn-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.5em;
+  color: #003C78;
+}
+
+.content_margin {
+  margin: 20px;
+}
+
+// Needed for Street View elements.
+.street-view {
+  width: 100% !important;
+  height: 100px !important;
+}
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector

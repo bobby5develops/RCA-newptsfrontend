@@ -1,0 +1,41 @@
+<style>
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+        color: #fff;
+        background-color: #295aa4;
+        border: 1px solid #888888;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" aria-label="transactions" ui-sref="app.private.properties.transactions({lat: playersCtrl.mapCenter.latitude, lon: playersCtrl.mapCenter.longitude, zoom: playersCtrl.mapZoom})">{{'TRANSACTIONS' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-default" aria-label="players" ng-click="playersCtrl.playersStateRoutingService.goBuyers()">{{'PLAYERS' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-default" aria-label="app.private.properties.trendstrades">Trends &amp; Trades
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <tabset>
+                <tab heading="Buyers" active="playersCtrl.isBuyersSelected">
+                    <div ui-view="buyers"></div>
+                </tab>
+                <tab heading="Sellers" active="playersCtrl.isSellersSelected">
+                    <div ui-view="sellers"></div>
+                </tab>
+                <tab heading="Brokers" active="playersCtrl.isBrokersSelected">
+                    <div ui-view="brokers"></div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>

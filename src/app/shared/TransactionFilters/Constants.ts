@@ -1,0 +1,15 @@
+export var ModuleName = "Shared.TransactionFilters";
+var templateNamespace = ModuleName + ".Templates.";
+export var PropertyTypeFilterTemplateName = templateNamespace + "PropertyTypeFilterTemplate";
+export var PropertyDetailsFilterMenuTemplateName =  templateNamespace + "PropertyDetailsFilterMenuTemplate";
+export var GeographyFilterTemplateName =  templateNamespace + "GeographyFilterTemplate";
+export var GeographyFilterItemTemplateName =  templateNamespace + "GeographyFilterItemTemplate";
+export var GeographyFilterItemChildrenTemplateName =  templateNamespace + "GeographyFilterItemChildrenTemplate";
+export var CompanyFiltersTemplateName =  templateNamespace + "CompanyFiltersTemplate";
+export var CompanyFilterItemTemplateName = templateNamespace + "CompanyFilterItemTemplate";
+export var KeywordFiltersTemplateName =  templateNamespace + "KeywordFiltersTemplate";
+export var KeywordFiltersItemTemplateName = templateNamespace + "KeywordFiltersItemTemplate";
+export var GeoAutocompleteTemplateName =  templateNamespace + "GeoAutocompleteTemplate";
+export var DateRangeTemplateName =  templateNamespace + "DateRangeTemplate";
+export var PinViewsTemplateName =  templateNamespace + "PinViewsTemplate";
+export var TransactionsFilterMenuTemplateName =  templateNamespace + "TransactionsFilterMenuTemplate";

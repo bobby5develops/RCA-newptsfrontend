@@ -1,0 +1,35 @@
+<style>
+    .radiogroup {
+        display: inline-block;
+        text-align: center;
+    }
+    .radiogroup label {
+        display: block;
+    }
+</style>
+
+<div>
+    <div class="row btn-group" role="group" aria-label="...">
+        <span class="col-md-12">
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterAll}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('All')">All</button>
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterPropertyName}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('PropertyName')">Property Name</button>
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterAddress}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('Address')">Address</button>
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterComments}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('Comments')">Comments</button>
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterHotels}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('Hotels')">Hotels</button>
+            <button type="button" ng-class="{'btn-primary': keywordFilterItemCtrl.isFilterTenants}" class="btn btn-default" ng-click="keywordFilterItemCtrl.setKeywordField('Tenants')">Tenants</button>
+        </span>
+    </div>
+
+    <div class="row">
+        <span class="col-md-9"><input placeholder="Enter Keyword" type="text" ng-model="keywordFilterItemCtrl.input"></span>
+        <span class="col-md-1 radiogroup">
+            <label ng-attr-for="{{::keywordFilterItemCtrl.includeRadioUniqueId}}">Inc</label>
+            <input type="radio"  ng-attr-id="{{::keywordFilterItemCtrl.includeRadioUniqueId}}" name="{{::keywordFilterItemCtrl.includeRadioUniqueId}}" ng-value="true" ng-model="keywordFilterItemCtrl.include"/>
+        </span>
+        <span class="col-md-1 radiogroup">
+            <label ng-attr-for="{{::keywordFilterItemCtrl.excludeRadioUniqueId}}">Exc</label>
+            <input type="radio" ng-attr-id="{{::keywordFilterItemCtrl.excludeRadioUniqueId}}" name="{{::keywordFilterItemCtrl.excludeRadioUniqueId}}" ng-value="false" ng-model="keywordFilterItemCtrl.include"/>
+        </span>
+    </div>
+</div>
+

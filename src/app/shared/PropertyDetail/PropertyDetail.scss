@@ -1,0 +1,21 @@
+.propBox {
+  border-style: groove;
+  border-width: medium;
+  overflow: auto;
+  padding-top: 10px;
+  border-radius: 25px;
+}
+
+.verticalLine {
+  border-left: thin solid grey;
+}
+
+.rowPadding {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: inherit;
+}
+
+hr {
+  border-color: grey;
+}

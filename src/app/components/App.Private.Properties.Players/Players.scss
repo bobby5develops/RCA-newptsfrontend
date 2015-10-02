@@ -1,0 +1,34 @@
+a {
+  cursor: pointer;
+}
+.sortorder:after {
+  content: '\25b2';
+}
+.sortorder.reverse:after {
+  content: '\25bc';
+}
+.even{
+  background-color: whitesmoke;
+}
+.odd {
+
+}
+.playerHead {
+  background-color: #295aa4;
+}
+.playerHead th{
+  border: solid white thin;
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.playerTable thead a {
+  color: white;
+}
+.playerTable thead a:hover{
+  color: #ff8a00;
+}
+.playerTable td {
+  padding-left: 4px;
+  padding-right: 4px;
+}

@@ -1,0 +1,187 @@
+<div class="content_margin">
+
+
+    <style>
+        /* **************************************** */
+        /*                 Coverage                 */
+        /* **************************************** */
+        table.covgc, table.covpt {
+            margin: 0px;
+            padding: 0px;
+            text-align: right;
+            font-size: 11px;
+            border-collapse: collapse;
+        }
+        table.covgc thead td, table.covpt thead td {
+            margin: 0px;
+            border: 1px solid #003366;
+            padding:2px;
+        }
+        table.covgc tbody td, table.covpt tbody td {
+            margin: 0px;
+            border: 1px dashed #AAA;
+            padding: 2px;
+        }
+        .coverage_topHeader
+        {
+            background-color: #003366;
+            color: #FFFFFF;
+            font-weight:bold;
+            border-bottom:1px solid white;
+        }
+        .coverage_topSubHeader
+        {
+            background-color: #003366;
+            color: #FFFFFF;
+            font-weight:normal;
+        }
+
+        .coverage_leftHeader
+        {
+            text-align:left;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+
+        .coverage_orangeHeader
+        {
+            margin: 10px 0px 0px 0px;
+            color:#EA7517;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+    </style>
+    <h1 class="centerColumn-title">Coverage</h1>
+
+    <div>
+        <table border="0" cellpadding="0">
+            <tr>
+                <td valign="top">
+                    <p>
+                        In 2000, Real Capital Analytics started tracking commercial property transactions in the United States. Beginning in 2007, coverage was expanded to include all markets globally. RCA has since then recorded a total of over $10 trillion in commercial real estate deals throughout 146 countries.
+                    </p>
+                    <p>
+                        RCA focuses on the main property types: office, industrial, retail, apartment, hotel, development sites, and senior housing and care. RCA research is concentrated on commercial property and portfolio sales of $2.5 million or greater in the US, and $10 million or greater outside of the US.
+                    </p>
+
+                </td>
+                <td valign="top">
+                    <img src="https://www.rcanalytics.com/images/content/1310_GlobalCoverageMap_WEB.png" style="width: 375px; height: 244px; border: none;" alt="World Map" />
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" cellpadding="0">
+            <tr>
+                <td colspan="3" align="center">
+                    <div class="coverage_orangeHeader">RCA's Global Coverage</div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" align="left">
+                    <div class="coverage_orangeHeader">By Zone*</div>
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td valign="top" align="left">
+                    <div class="coverage_orangeHeader">By Property Types*</div>
+                </td>
+            </tr>
+            <tr>
+
+                <td valign="top">
+                    <!-- COVERAGE TOTALS -->
+
+                    <table width="360" cellpadding="0" cellspacing="0" border="0" class="covgc">
+                        <thead>
+                        <tr align="center">
+                            <td width="60" class="coverage_topSubHeader"></td>
+                            <td width="78" class="coverage_topSubHeader"></td>
+                            <td width="110" colspan="2" class="coverage_topHeader">'07 - '14YTD</td>
+                            <td width="110" colspan="2" class="coverage_topHeader">Entire History †</td>
+                        </tr>
+                        <tr align="center">
+                            <td class="coverage_topSubHeader"></td>
+                            <td class="coverage_topSubHeader">Country</td>
+                            <td class="coverage_topSubHeader" align="center" width="55">
+                                Vol<br>($ bil)</td>
+                            <td class="coverage_topSubHeader" align="center" width="55">
+                                #<br>props</td>
+                            <td class="coverage_topSubHeader" align="center" width="55">
+                                Vol<br>($ bil)</td>
+                            <td class="coverage_topSubHeader" align="center" width="55">
+                                #<br>props</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        <tr ng-repeat="row in coverageCtrl.coverage" height="14" bgcolor="{{row.zone_tx=='EMEA'?'#E4EBF1':'#FFFFFF'}}">
+                            <td rowspan="{{row.rowspan}}" ng-if="row.country_tx === 'China' || row.country_tx === 'United Kingdom' || row.country_tx === 'United States'"><b>{{row.zone_tx}}</b></td>
+                            <td>{{row.country_tx}}</td>
+                            <td>{{row.vol2007_nb | currency:"$":0}}</td>
+                            <td>{{row.props2007_nb | number}}</td>
+                            <td>{{row.vol_nb | currency:"$":0}}</td>
+                            <td>{{row.props_nb | number}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- END COVERAGE TOTALS -->
+                </td>
+                <td>&nbsp;</td>
+                <td valign="top">
+                    <!-- COVERAGE PROPERTY TYPES TOTALS -->
+                    <table width="360" cellpadding="0" cellspacing="0" border="0" class="covpt">
+                        <thead>
+                        <tr align="center">
+                            <td class="coverage_topSubHeader"></td>
+                            <td colspan="2" class="coverage_topHeader">US</td>
+                            <td colspan="2" class="coverage_topHeader">Non-US</td>
+                            <td colspan="2" class="coverage_topHeader">Grand Total</td>
+                        </tr>
+                        <tr align="center">
+                            <td class="coverage_topSubHeader" align="left" width="80">Property Type</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                Vol<br>($ bil)</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                #<br>props</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                Vol<br>($ bil)</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                #<br>props</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                Vol<br>($ bil)</td>
+                            <td class="coverage_topSubHeader" align="center" width="40">
+                                #<br>props</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="row in coverageCtrl.coveragePropertyTypes" height="56">
+                            <td align="left" width="98" class="coverage_leftHeader"><b>{{row.Main_Type_tx}}</b></td>
+                            <td align="right" width="40">{{row.US_Vol_nb | currency:"$":0}}</td>
+                            <td align="right" width="40">{{row.US_Props_nb | number}}</td>
+                            <td bgcolor="#E4EBF1" align="right" width="40">{{row.NonUS_Vol_nb | currency:"$":0}}</td>
+                            <td bgcolor="#E4EBF1" align="right" width="40">{{row.NonUS_Props_nb | number}}</td>
+                            <td align="right" width="40">{{row.Total_Vol_nb | currency:"$":0}}</td>
+                            <td align="right" width="40">{{row.Total_Props_nb | number}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- END COVERAGE PROPERTY TYPES TOTALS -->
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p style="font-size: 80%;">
+        Last updated
+        <!--dtLastRevision-->
+        *closed transactions of properties or portfolios<br />
+        &dagger; Historical data begins from 2007 for most countries; however, comparable transactions since 2001 exist in the US, UK and France (Paris).
+    </p>
+
+
+    <p>
+        Learn about our <a href="/#/methodology" title="Methodology/Sources">Methodology/Sources</a>.
+    </p>
+</div>
